@@ -1,109 +1,91 @@
 {
-  "updated_at": "2026-09-04T16:10:09.587Z",
+  "updated_at": "2026-09-04T16:14:21.294Z",
   "user": {
     "login": "eekilinc",
     "name": "Ekrem Eşref KILINÇ",
-    "avatar_url": "https://avatars.githubusercontent.com/eekilinc",
+    "avatar_url": "https://avatars.githubusercontent.com/u/74473092?v=4",
     "html_url": "https://github.com/eekilinc",
     "public_repos": 18,
     "followers": 36,
     "total_stars": 17,
-    "total_commits": "1.3K+"
+    "total_commits": "492+"
   },
   "repos": [
+    {
+      "name": "koza_rc_car",
+      "html_url": "https://github.com/eekilinc/koza_rc_car",
+      "description": "Açıklama eklenmedi.",
+      "language": "Dart",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-01-08T09:23:24Z",
+      "topics": [],
+      "homepage": ""
+    },
+    {
+      "name": "learnnSql",
+      "html_url": "https://github.com/eekilinc/learnnSql",
+      "description": "Açıklama eklenmedi.",
+      "language": "C#",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-03-16T11:47:42Z",
+      "topics": [],
+      "homepage": ""
+    },
+    {
+      "name": "ocr-capture",
+      "html_url": "https://github.com/eekilinc/ocr-capture",
+      "description": "Açıklama eklenmedi.",
+      "language": "TypeScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-08-27T23:05:54Z",
+      "topics": [],
+      "homepage": ""
+    },
+    {
+      "name": "blutoothwithclassicsandble",
+      "html_url": "https://github.com/eekilinc/blutoothwithclassicsandble",
+      "description": "Açıklama eklenmedi.",
+      "language": "Dart",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2025-12-05T23:52:43Z",
+      "topics": [],
+      "homepage": ""
+    },
     {
       "name": "EzanApp",
       "html_url": "https://github.com/eekilinc/EzanApp",
       "description": "🕌 Islamic prayer times & customizable reminder app built with Flutter",
       "language": "Dart",
-      "stargazers_count": 6,
-      "forks_count": 1,
-      "pushed_at": "2026-08-25T14:30:00Z",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-09-02T00:45:52Z",
       "topics": [
-        "flutter",
-        "dart",
-        "prayer-times",
+        "aladhan-api",
         "android",
-        "ios"
+        "audio-player",
+        "dart",
+        "ezan"
       ],
       "homepage": ""
     },
     {
       "name": "optikdegerlendirme",
       "html_url": "https://github.com/eekilinc/optikdegerlendirme",
-      "description": "📋 Optik form okuma ve sınav değerlendirme için modern WPF masaüstü uygulaması (OMR)",
+      "description": "📋 Optik form okuma ve sınav değerlendirme için WPF masaüstü uygulaması (OMR)",
       "language": "C#",
-      "stargazers_count": 3,
+      "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-08-22T10:15:00Z",
+      "pushed_at": "2026-04-15T17:01:42Z",
       "topics": [
         "csharp",
-        "wpf",
-        "omr",
-        "desktop-app"
-      ],
-      "homepage": ""
-    },
-    {
-      "name": "ocr-capture",
-      "html_url": "https://github.com/eekilinc/ocr-capture",
-      "description": "🔍 Tauri ve Rust altyapısıyla geliştirilmiş yüksek hızlı ekran görüntüsü ve OCR metin tanıma aracı",
-      "language": "Rust",
-      "stargazers_count": 3,
-      "forks_count": 0,
-      "pushed_at": "2026-08-20T18:40:00Z",
-      "topics": [
-        "tauri",
-        "rust",
-        "ocr",
-        "desktop"
-      ],
-      "homepage": ""
-    },
-    {
-      "name": "pdfstudio",
-      "html_url": "https://github.com/eekilinc/pdfstudio",
-      "description": "📄 PDF belgelerini birleştirme, düzenleme ve optimize etme aracı",
-      "language": "TypeScript",
-      "stargazers_count": 2,
-      "forks_count": 0,
-      "pushed_at": "2026-08-18T16:20:00Z",
-      "topics": [
-        "pdf",
-        "typescript",
-        "tools",
-        "web-app"
-      ],
-      "homepage": ""
-    },
-    {
-      "name": "algoflow",
-      "html_url": "https://github.com/eekilinc/algoflow",
-      "description": "⚡ Algoritma ve veri yapılarını görselleştirerek öğrenmeyi kolaylaştıran interaktif uygulama",
-      "language": "JavaScript",
-      "stargazers_count": 2,
-      "forks_count": 0,
-      "pushed_at": "2026-08-15T09:10:00Z",
-      "topics": [
-        "algorithms",
-        "visualization",
-        "javascript"
-      ],
-      "homepage": ""
-    },
-    {
-      "name": "koza_rc_car",
-      "html_url": "https://github.com/eekilinc/koza_rc_car",
-      "description": "🚗 Flutter mobil arayüzü ile Bluetooth üzerinden kontrol edilen uzaktan kumandalı araç",
-      "language": "Dart",
-      "stargazers_count": 2,
-      "forks_count": 0,
-      "pushed_at": "2026-08-10T11:45:00Z",
-      "topics": [
-        "flutter",
-        "arduino",
-        "bluetooth",
-        "iot"
+        "dotnet",
+        "education",
+        "exam-evaluation",
+        "mvvm"
       ],
       "homepage": ""
     }
