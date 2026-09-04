@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T22:55:52.171Z",
+  "updated_at": "2026-09-04T23:14:48.622Z",
   "user": {
     "login": "eekilinc",
     "name": "Ekrem Eşref KILINÇ",
@@ -8,7 +8,7 @@
     "public_repos": 18,
     "followers": 36,
     "total_stars": 17,
-    "total_commits": "493+"
+    "total_commits": "495+"
   },
   "repos": [
     {
@@ -64,14 +64,7 @@
         "android",
         "audio-player",
         "dart",
-        "ezan",
-        "flutter",
-        "ios",
-        "islamic",
-        "local-notifications",
-        "muslim-app",
-        "namaz-vakitleri",
-        "prayer-times"
+        "ezan"
       ],
       "homepage": ""
     },
@@ -88,11 +81,7 @@
         "dotnet",
         "education",
         "exam-evaluation",
-        "mvvm",
-        "omr",
-        "optical-mark-recognition",
-        "windows-desktop",
-        "wpf"
+        "mvvm"
       ],
       "homepage": ""
     },
@@ -125,7 +114,7 @@
       "language": "HTML",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-09-04T16:25:40Z",
+      "pushed_at": "2026-09-04T23:14:32Z",
       "topics": [],
       "homepage": ""
     },
