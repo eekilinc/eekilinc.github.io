@@ -5,10 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ekrem Eşref KILINÇ — Yazılım Geliştirici</title>
 <meta name="description" content="Ekrem Eşref KILINÇ — Flutter, web ve masaüstü uygulama geliştiricisi. Projeler, beceriler ve iletişim.">
+<link rel="canonical" href="https://eekilinc.github.io">
+<meta name="theme-color" content="#0b1020">
+
+<!-- Open Graph / Sosyal Medya Paylaşım Etiketleri -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eekilinc.github.io">
 <meta property="og:title" content="Ekrem Eşref KILINÇ — Yazılım Geliştirici">
 <meta property="og:description" content="Flutter · Web · Masaüstü — projelerimi keşfedin.">
-<meta property="og:type" content="website">
+<meta property="og:image" content="https://avatars.githubusercontent.com/eekilinc">
+
+<!-- Twitter Card Etiketleri -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ekrem Eşref KILINÇ — Yazılım Geliştirici">
+<meta name="twitter:description" content="Flutter · Web · Masaüstü — projelerimi keşfedin.">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/eekilinc">
+
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- Google Fonts (Plus Jakarta Sans) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --bg: #0b1020;
@@ -29,7 +48,7 @@ body {
     radial-gradient(700px 400px at -10% 20%, rgba(14,117,182,.16), transparent 60%),
     var(--bg);
   color: var(--text);
-  font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   line-height: 1.6;
 }
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
@@ -42,19 +61,46 @@ body {
 nav {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(12px);
-  background: rgba(11,16,32,.75);
+  background: rgba(11,16,32,.85);
   border-bottom: 1px solid var(--border);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.logo { font-weight: 700; font-size: 18px; letter-spacing: .3px; text-decoration: none; color: var(--text); }
+.logo { font-weight: 800; font-size: 19px; letter-spacing: .3px; text-decoration: none; color: var(--text); }
 .logo span { color: transparent; background: var(--grad); -webkit-background-clip: text; background-clip: text; }
-.nav-links { display: flex; gap: 22px; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: 15px; transition: color .2s; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color .2s; }
 .nav-links a:hover { color: var(--text); }
+
+/* Mobil Hamburger Butonu */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  transition: transform .25s, opacity .25s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 header.hero { padding: 96px 0 64px; text-align: center; }
 .avatar-wrap { width: 128px; height: 128px; border-radius: 50%; padding: 4px; background: var(--grad); margin: 0 auto 24px; }
 .avatar-wrap img { width: 100%; height: 100%; border-radius: 50%; display: block; object-fit: cover; }
-h1.name { font-size: clamp(34px, 6vw, 52px); line-height: 1.15; }
+h1.name { font-size: clamp(34px, 6vw, 52px); line-height: 1.15; font-weight: 800; }
 .role { font-size: clamp(17px, 2.5vw, 21px); color: var(--muted); margin-top: 10px; min-height: 30px; }
 .role b { color: var(--blue); font-weight: 600; }
 .cursor { display: inline-block; width: 9px; height: 22px; background: var(--purple); vertical-align: -3px; animation: blink 1s step-end infinite; }
@@ -75,8 +121,9 @@ h1.name { font-size: clamp(34px, 6vw, 52px); line-height: 1.15; }
 .btn-primary { background: var(--grad); color: #fff; box-shadow: 0 8px 26px rgba(124,58,237,.35); }
 .btn-ghost { border: 1px solid var(--border); color: var(--text); background: rgba(255,255,255,.02); }
 section { padding: 64px 0; }
-.sec-title { font-size: clamp(24px, 3.5vw, 32px); text-align: center; margin-bottom: 8px; }
-.sec-sub { text-align: center; color: var(--muted); margin-bottom: 40px; }
+.sec-title { font-size: clamp(24px, 3.5vw, 32px); text-align: center; margin-bottom: 8px; font-weight: 700; }
+.sec-sub { text-align: center; color: var(--muted); margin-bottom: 40px; font-size: 15px; }
+
 .stats-strip {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 14px; max-width: 720px; margin: 44px auto 0;
@@ -85,8 +132,76 @@ section { padding: 64px 0; }
   background: var(--card); border: 1px solid var(--border); border-radius: 14px;
   padding: 18px 10px; text-align: center;
 }
-.stat b { display: block; font-size: 26px; }
+.stat b { display: block; font-size: 26px; font-weight: 700; }
 .stat span { color: var(--muted); font-size: 13.5px; }
+
+/* Hakkımda Bölümü */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform .18s, border-color .18s, box-shadow .2s;
+}
+.about-card:hover {
+  transform: translateY(-3px);
+  border-color: #35406e;
+  box-shadow: 0 10px 26px rgba(0,0,0,.25);
+}
+.about-icon {
+  font-size: 26px;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+}
+.about-card h3 { font-size: 18px; font-weight: 600; color: var(--text); }
+.about-card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.about-card strong { color: var(--text); }
+
+/* Filtreleme Butonları (Pills) */
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.pill {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+}
+.pill:hover {
+  color: var(--text);
+  border-color: var(--purple);
+}
+.pill.active {
+  background: var(--grad);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(124,58,237,.3);
+}
+
 .grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 18px;
 }
@@ -143,19 +258,76 @@ section { padding: 64px 0; }
 .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 760px; margin: 0 auto; }
 .skill {
   border: 1px solid var(--border); background: var(--card); border-radius: 999px;
-  padding: 8px 18px; font-size: 14.5px; transition: border-color .2s, transform .15s;
+  padding: 8px 18px; font-size: 14.5px; font-weight: 500; transition: border-color .2s, transform .15s;
 }
 .skill:hover { border-color: var(--purple); transform: translateY(-2px); }
+
+/* Footer ve E-posta Kopyalama */
 footer {
   border-top: 1px solid var(--border); margin-top: 40px;
-  padding: 36px 0 44px; text-align: center; color: var(--muted); font-size: 14.5px;
+  padding: 40px 0 48px; text-align: center; color: var(--muted); font-size: 14.5px;
 }
 footer a { color: var(--blue); text-decoration: none; }
+.email-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+.copy-email-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all .2s;
+}
+.copy-email-btn:hover {
+  color: var(--text);
+  border-color: var(--blue);
+  background: rgba(56,189,248,0.1);
+}
+.copy-email-btn.copied {
+  background: rgba(34,197,94,0.15);
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
-@media (max-width: 560px) {
-  .nav-links { display: none; }
+
+/* Mobil Uyumluluk */
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(11, 16, 32, 0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 16px;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,.5);
+  }
+  .nav-links.open { display: flex; }
   header.hero { padding-top: 64px; }
+  .filter-pills { gap: 6px; }
+  .pill { font-size: 12.5px; padding: 6px 12px; }
 }
 </style>
 </head>
@@ -164,7 +336,13 @@ footer a { color: var(--blue); text-decoration: none; }
 <nav>
   <div class="container nav-inner">
     <a class="logo" href="#">ekrem<span>.dev</span></a>
-    <div class="nav-links">
+    
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#hakkimda">Hakkımda</a>
       <a href="#projeler">Projeler</a>
       <a href="#beceriler">Beceriler</a>
       <a href="https://github.com/eekilinc" target="_blank" rel="noopener">GitHub</a>
@@ -198,10 +376,43 @@ footer a { color: var(--blue); text-decoration: none; }
   </div>
 </header>
 
+<section id="hakkimda">
+  <div class="container">
+    <h2 class="sec-title">Hakkımda & <span class="grad-text">Eğitim</span></h2>
+    <p class="sec-sub">Geliştirme vizyonum ve odaklandığım alanlar</p>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="about-icon">🎓</div>
+        <h3>Eğitim</h3>
+        <p><strong>Burdur Mehmet Akif Ersoy Üniversitesi</strong> bünyesinde öğrenimime devam ediyor, yazılım mühendisliği prensipleri ve teorik altyapıyı pratik projelerle pekiştiriyorum.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-icon">⚡</div>
+        <h3>Geliştirme Odağı</h3>
+        <p><strong>Flutter & Dart</strong> ile modern çapraz platform mobil uygulamalar, <strong>C# / WPF & Tauri (Rust)</strong> ile yüksek performanslı masaüstü yazılımları geliştiriyorum.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-icon">🚀</div>
+        <h3>Açık Kaynak & Vizyon</h3>
+        <p>Görüntü işlemeden (OCR, OMR) Bluetooth / IoT haberleşmesine kadar gerçek hayat problemlerini çözen, temiz mimari prensiplerine uygun açık kaynak çözümler üretiyorum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="projeler">
   <div class="container">
     <h2 class="sec-title">Öne Çıkan <span class="grad-text">Projeler</span></h2>
     <p class="sec-sub">GitHub ile otomatik senkronize edilen güncel çalışmalar</p>
+
+    <!-- Filtreleme Butonları -->
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-filter="all">Tümü</button>
+      <button class="pill" data-filter="mobile">Flutter / Mobil</button>
+      <button class="pill" data-filter="desktop">Masaüstü & C#</button>
+      <button class="pill" data-filter="web">Web & Araçlar</button>
+    </div>
+
     <div class="grid" id="repo-grid">
       <!-- Başlangıçta Shimmer Skeleton kartları gösterilir -->
       <div class="skeleton-card"><div class="shimmer" style="height:22px;width:60%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:80%;"></div></div>
@@ -237,7 +448,14 @@ footer a { color: var(--blue); text-decoration: none; }
 
 <footer>
   <div class="container">
-    <p>📧 <a href="mailto:ekilinc@mehmetakif.edu.tr">ekilinc@mehmetakif.edu.tr</a></p>
+    <div class="email-box">
+      <span>📧</span>
+      <a href="mailto:ekilinc@mehmetakif.edu.tr" id="email-link">ekilinc@mehmetakif.edu.tr</a>
+      <button class="copy-email-btn" id="copy-email-btn" title="E-postayı Kopyala" aria-label="E-postayı Kopyala">
+        <svg id="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        <span id="copy-text">Kopyala</span>
+      </button>
+    </div>
     <p style="margin-top:8px;">© 2026 Ekrem Eşref KILINÇ — <a href="https://github.com/eekilinc" target="_blank" rel="noopener">GitHub</a></p>
   </div>
 </footer>
@@ -334,6 +552,9 @@ const FALLBACK_DATA = {
   ]
 };
 
+let allLoadedRepos = [];
+let currentFilter = "all";
+
 function renderStats(user) {
   if (!user) return;
   const reposEl = document.getElementById("st-repos");
@@ -347,19 +568,41 @@ function renderStats(user) {
   if (commitsEl && user.total_commits !== undefined) commitsEl.textContent = user.total_commits;
 }
 
-function renderRepos(repos) {
+function filterAndRenderRepos() {
   const grid = document.getElementById("repo-grid");
-  if (!grid || !Array.isArray(repos) || repos.length === 0) return;
+  if (!grid || !Array.isArray(allLoadedRepos) || allLoadedRepos.length === 0) return;
 
-  grid.innerHTML = repos.map(r => {
+  const filtered = allLoadedRepos.filter(r => {
+    if (currentFilter === "all") return true;
+    const lang = (r.language || "").toLowerCase();
+    const topics = (r.topics || []).map(t => t.toLowerCase());
+
+    if (currentFilter === "mobile") {
+      return lang === "dart" || topics.some(t => t.includes("flutter") || t.includes("dart") || t.includes("mobile") || t.includes("android") || t.includes("ios"));
+    }
+    if (currentFilter === "desktop") {
+      return lang === "c#" || lang === "rust" || topics.some(t => t.includes("desktop") || t.includes("wpf") || t.includes("tauri") || t.includes("csharp"));
+    }
+    if (currentFilter === "web") {
+      return lang === "typescript" || lang === "javascript" || lang === "php" || lang === "html" || topics.some(t => t.includes("web") || t.includes("tools"));
+    }
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="card" style="grid-column: 1 / -1; text-align: center; padding: 32px;"><p>Bu kategoride henüz repo bulunamadı.</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(r => {
     const updated = r.pushed_at ? new Date(r.pushed_at).toLocaleDateString("tr-TR", { day: "numeric", month: "short", year: "numeric" }) : "";
     const demoLink = r.homepage ? `
-      <a href="${r.homepage}" target="_blank" rel="noopener" class="action-btn" title="Canlı Demo">
+      <a href="${r.homepage}" target="_blank" rel="noopener" class="action-btn" title="Canlı Demo" aria-label="Canlı Demo">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
       </a>` : "";
 
     const codeLink = `
-      <a href="${r.html_url}" target="_blank" rel="noopener" class="action-btn" title="Kaynak Kod">
+      <a href="${r.html_url}" target="_blank" rel="noopener" class="action-btn" title="Kaynak Kod" aria-label="Kaynak Kod">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
       </a>`;
 
@@ -404,8 +647,9 @@ async function fetchPortfolioData() {
     const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
     if (cached && cachedTime && (Date.now() - parseInt(cachedTime, 10) < CACHE_TTL)) {
       const data = JSON.parse(cached);
+      allLoadedRepos = data.repos || [];
       renderStats(data.user);
-      renderRepos(data.repos);
+      filterAndRenderRepos();
       console.log("[Portfolio] Veriler önbellekten (localStorage) yüklendi.");
       return;
     }
@@ -419,8 +663,9 @@ async function fetchPortfolioData() {
     if (res.ok) {
       const data = await res.json();
       if (data && data.user && data.repos) {
+        allLoadedRepos = data.repos;
         renderStats(data.user);
-        renderRepos(data.repos);
+        filterAndRenderRepos();
         try {
           localStorage.setItem(CACHE_KEY, JSON.stringify(data));
           localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
@@ -470,8 +715,9 @@ async function fetchPortfolioData() {
           }))
         };
 
+        allLoadedRepos = liveData.repos;
         renderStats(liveData.user);
-        renderRepos(liveData.repos);
+        filterAndRenderRepos();
 
         try {
           localStorage.setItem(CACHE_KEY, JSON.stringify(liveData));
@@ -487,13 +733,67 @@ async function fetchPortfolioData() {
 
   // 4. Katman: En güvenli Fallback (Sayfa asla boş kalmaz ve hata göstermez)
   console.log("[Portfolio] Fallback veri seti devreye girdi.");
+  allLoadedRepos = FALLBACK_DATA.repos;
   renderStats(FALLBACK_DATA.user);
-  renderRepos(FALLBACK_DATA.repos);
+  filterAndRenderRepos();
 }
 
+// Event Listeners Kurulumu
 document.addEventListener("DOMContentLoaded", () => {
+  // Verileri çek
   fetchPortfolioData();
   observeReveals();
+
+  // Mobil Menü Aç/Kapa
+  const navToggle = document.getElementById("nav-toggle");
+  const navLinks = document.getElementById("nav-links");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.classList.toggle("open", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Menü linkine tıklanınca mobilde menüyü kapat
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // Proje Filtreleme Butonları
+  const filterPills = document.querySelectorAll(".pill");
+  filterPills.forEach(pill => {
+    pill.addEventListener("click", () => {
+      filterPills.forEach(p => p.classList.remove("active"));
+      pill.classList.add("active");
+      currentFilter = pill.dataset.filter || "all";
+      filterAndRenderRepos();
+    });
+  });
+
+  // E-posta Kopyalama
+  const copyBtn = document.getElementById("copy-email-btn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      const email = "ekilinc@mehmetakif.edu.tr";
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.classList.add("copied");
+        const copyText = copyBtn.querySelector("#copy-text");
+        if (copyText) copyText.textContent = "Kopyalandı! ✓";
+        setTimeout(() => {
+          copyBtn.classList.remove("copied");
+          if (copyText) copyText.textContent = "Kopyala";
+        }, 2000);
+      } catch (err) {
+        console.warn("Panoya kopyalama başarısız:", err);
+      }
+    });
+  }
 });
 </script>
 </body>
