@@ -873,7 +873,7 @@
     const LC = {
       JavaScript: "#f1e05a", TypeScript: "#3178c6", Dart: "#00B4AB", PHP: "#4F5D95",
       HTML: "#e34c26", CSS: "#563d7c", "C#": "#178600", Python: "#3572A5",
-      Rust: "#dea584", Blade: "#f7523f"
+      Rust: "#dea584", Blade: "#f7523f", Kotlin: "#A97BFF"
     };
 
     // Sayfa ilk açıldığında veya ağ çöktüğünde bile sayfanın kusursuz görünmesini sağlayan yedek veri seti
@@ -882,9 +882,29 @@
         public_repos: 18,
         followers: 36,
         total_stars: 17,
-        total_commits: "1.3K+"
+        total_commits: "493+"
       },
       repos: [
+        {
+          name: "indirgitsin",
+          html_url: "https://github.com/eekilinc/indirgitsin",
+          description: "Kotlin ve Jetpack Compose ile Android video/ses indirme yöneticisi. Paralel aktarım, sesli video birleştirme ve kalıcı kuyruk.",
+          language: "Kotlin",
+          stargazers_count: 0,
+          pushed_at: "2026-09-01T13:08:49Z",
+          topics: ["android", "download-manager", "jetpack-compose", "kotlin"],
+          homepage: "https://github.com/eekilinc/indirgitsin/releases/latest"
+        },
+        {
+          name: "MyFinans",
+          html_url: "https://github.com/eekilinc/MyFinans",
+          description: "💰 React + Capacitor mobil/web arayüzü ve Node.js backend ile kişisel finans takibi. Bütçe, kredi kartı ve taksit yönetimi.",
+          language: "TypeScript",
+          stargazers_count: 0,
+          pushed_at: "2026-09-03T00:02:25Z",
+          topics: ["react", "capacitor", "finance", "mobile", "typescript"],
+          homepage: ""
+        },
         {
           name: "EzanApp",
           html_url: "https://github.com/eekilinc/EzanApp",
@@ -916,26 +936,6 @@
           homepage: ""
         },
         {
-          name: "pdfstudio",
-          html_url: "https://github.com/eekilinc/pdfstudio",
-          description: "📄 PDF belgelerini birleştirme, düzenleme ve optimize etme aracı",
-          language: "TypeScript",
-          stargazers_count: 2,
-          pushed_at: "2026-08-18T16:20:00Z",
-          topics: ["pdf", "typescript", "tools"],
-          homepage: ""
-        },
-        {
-          name: "algoflow",
-          html_url: "https://github.com/eekilinc/algoflow",
-          description: "⚡ Algoritma ve veri yapılarını görselleştirerek öğrenmeyi kolaylaştıran interaktif uygulama",
-          language: "JavaScript",
-          stargazers_count: 2,
-          pushed_at: "2026-08-15T09:10:00Z",
-          topics: ["algorithms", "visualization"],
-          homepage: ""
-        },
-        {
           name: "koza_rc_car",
           html_url: "https://github.com/eekilinc/koza_rc_car",
           description: "🚗 Flutter mobil arayüzü ile Bluetooth üzerinden kontrol edilen uzaktan kumandalı araç",
@@ -943,6 +943,26 @@
           stargazers_count: 2,
           pushed_at: "2026-08-10T11:45:00Z",
           topics: ["flutter", "arduino", "bluetooth"],
+          homepage: ""
+        },
+        {
+          name: "learnnSql",
+          html_url: "https://github.com/eekilinc/learnnSql",
+          description: "📊 İnteraktif SQL öğrenme ve veritabanı sorgulama pratik platformu.",
+          language: "C#",
+          stargazers_count: 0,
+          pushed_at: "2026-03-16T11:47:42Z",
+          topics: ["sql", "csharp", "learning"],
+          homepage: ""
+        },
+        {
+          name: "pdfstudio",
+          html_url: "https://github.com/eekilinc/pdfstudio",
+          description: "📄 PDF belgelerini birleştirme, düzenleme ve optimize etme aracı",
+          language: "TypeScript",
+          stargazers_count: 2,
+          pushed_at: "2026-08-18T16:20:00Z",
+          topics: ["pdf", "typescript", "tools"],
           homepage: ""
         }
       ]
@@ -974,13 +994,13 @@
         const topics = (r.topics || []).map(t => t.toLowerCase());
 
         if (currentFilter === "mobile") {
-          return lang === "dart" || topics.some(t => t.includes("flutter") || t.includes("dart") || t.includes("mobile") || t.includes("android") || t.includes("ios"));
+          return lang === "dart" || lang === "kotlin" || topics.some(t => t.includes("flutter") || t.includes("dart") || t.includes("mobile") || t.includes("android") || t.includes("ios") || t.includes("kotlin") || t.includes("capacitor"));
         }
         if (currentFilter === "desktop") {
           return lang === "c#" || lang === "rust" || topics.some(t => t.includes("desktop") || t.includes("wpf") || t.includes("tauri") || t.includes("csharp"));
         }
         if (currentFilter === "web") {
-          return lang === "typescript" || lang === "javascript" || lang === "php" || lang === "html" || topics.some(t => t.includes("web") || t.includes("tools"));
+          return lang === "typescript" || lang === "javascript" || lang === "php" || lang === "html" || topics.some(t => t.includes("web") || t.includes("tools") || t.includes("react") || t.includes("finance"));
         }
         return true;
       });
@@ -1033,8 +1053,8 @@
 
     // Akıllı Katmanlı Veri Getirme (Cache -> Static File -> Live API -> Fallback)
     async function fetchPortfolioData() {
-      const CACHE_KEY = "eekilinc_gh_cache";
-      const CACHE_TIME_KEY = "eekilinc_gh_cache_time";
+      const CACHE_KEY = "eekilinc_gh_cache_v2";
+      const CACHE_TIME_KEY = "eekilinc_gh_cache_time_v2";
       const CACHE_TTL = 30 * 60 * 1000; // 30 dakika
 
       // 1. Katman: Tarayıcı önbelleği

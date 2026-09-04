@@ -13,6 +13,20 @@ const OUTPUT_FILE = path.join(ROOT_DIR, 'data/github.json');
 const USERNAME = 'eekilinc';
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
 
+// Öne çıkarılması zorunlu olan projeler (GitHub pinned listesinde olmasa bile eklenir)
+const PRIORITY_REPOS = ['indirgitsin', 'MyFinans', 'EzanApp', 'optikdegerlendirme', 'ocr-capture', 'koza_rc_car'];
+
+const CUSTOM_DESCRIPTIONS = {
+  'indirgitsin': 'Kotlin ve Jetpack Compose ile Android video/ses indirme yöneticisi. Paralel aktarım, sesli video birleştirme ve kalıcı kuyruk.',
+  'MyFinans': '💰 React + Capacitor mobil/web arayüzü ve Node.js backend ile kişisel finans takibi. Bütçe, kredi kartı ve taksit yönetimi.',
+  'koza_rc_car': '🚗 Flutter mobil arayüzü ile Bluetooth üzerinden kontrol edilen RC model araç projesi.',
+  'learnnSql': '📊 İnteraktif SQL öğrenme ve veritabanı sorgulama pratik platformu.',
+  'ocr-capture': '🔍 Tauri ve Rust altyapısıyla geliştirilmiş yüksek hızlı ekran görüntüsü ve OCR metin tanıma aracı.',
+  'blutoothwithclassicsandble': '📡 Flutter ile Bluetooth Classic ve BLE haberleşme kütüphanesi & örnekleri.',
+  'EzanApp': '🕌 Islamic prayer times & customizable reminder app built with Flutter',
+  'optikdegerlendirme': '📋 Optik form okuma ve sınav değerlendirme için WPF masaüstü uygulaması (OMR)'
+};
+
 const headers = {
   'Accept': 'application/vnd.github.v3+json',
   'User-Agent': 'eekilinc-github-sync-bot'
@@ -172,40 +186,85 @@ async function main() {
   const ownRepos = reposRest.filter(r => !r.fork && r.name !== USERNAME);
   const totalStars = ownRepos.reduce((acc, r) => acc + (r.stargazers_count || 0), 0);
 
-  let finalRepos = [];
-  if (gqlData?.pinnedRepos && gqlData.pinnedRepos.length > 0) {
-    finalRepos = gqlData.pinnedRepos.map(node => ({
-      name: node.name,
-      html_url: node.url,
-      description: node.description || "Açıklama eklenmedi.",
-      language: node.primaryLanguage?.name || "",
-      stargazers_count: node.stargazerCount || 0,
-      forks_count: node.forkCount || 0,
-      pushed_at: node.pushedAt,
-      topics: (node.repositoryTopics?.nodes || []).map(n => n.topic.name),
-      homepage: node.homepageUrl || ""
-    }));
-  } else if (ownRepos.length > 0) {
-    const top = [...ownRepos].sort((a, b) =>
-      (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at))
-    ).slice(0, 6);
+  // Havuzdaki tüm aday repoları topla
+  const repoMap = new Map();
 
-    finalRepos = top.map(r => ({
+  // Önceki verilerden aktar
+  if (prevData?.repos) {
+    for (const r of prevData.repos) {
+      repoMap.set(r.name.toLowerCase(), r);
+    }
+  }
+
+  // REST API'deki repoları haritaya ekle
+  for (const r of ownRepos) {
+    let lang = r.language || "";
+    if (r.name.toLowerCase() === 'indirgitsin') lang = 'Kotlin';
+
+    repoMap.set(r.name.toLowerCase(), {
       name: r.name,
       html_url: r.html_url,
-      description: r.description || "Açıklama eklenmedi.",
-      language: r.language || "",
+      description: r.description || CUSTOM_DESCRIPTIONS[r.name] || "Açıklama eklenmedi.",
+      language: lang,
       stargazers_count: r.stargazers_count || 0,
       forks_count: r.forks_count || 0,
       pushed_at: r.pushed_at,
       topics: r.topics || [],
-      homepage: r.homepage || ""
-    }));
-  } else if (prevData?.repos) {
-    finalRepos = prevData.repos;
+      homepage: r.homepage || (r.name.toLowerCase() === 'indirgitsin' ? 'https://github.com/eekilinc/indirgitsin/releases/latest' : "")
+    });
   }
 
-  let formattedCommits = prevData?.user?.total_commits || "1.3K+";
+  // GraphQL pinned repolarını haritaya ekle/güncelle
+  if (gqlData?.pinnedRepos) {
+    for (const node of gqlData.pinnedRepos) {
+      let lang = node.primaryLanguage?.name || "";
+      if (node.name.toLowerCase() === 'indirgitsin') lang = 'Kotlin';
+
+      repoMap.set(node.name.toLowerCase(), {
+        name: node.name,
+        html_url: node.url,
+        description: node.description || CUSTOM_DESCRIPTIONS[node.name] || "Açıklama eklenmedi.",
+        language: lang,
+        stargazers_count: node.stargazerCount || 0,
+        forks_count: node.forkCount || 0,
+        pushed_at: node.pushedAt,
+        topics: (node.repositoryTopics?.nodes || []).map(n => n.topic.name),
+        homepage: node.homepageUrl || ""
+      });
+    }
+  }
+
+  // Son repo listesini oluştur: Öncelikli repolar başta, diğerleri yıldız ve güncelleme tarihine göre
+  const finalRepos = [];
+  const addedNames = new Set();
+
+  // 1. Öncelikli / İstenen repoları başa koy
+  for (const name of PRIORITY_REPOS) {
+    const key = name.toLowerCase();
+    if (repoMap.has(key)) {
+      const item = repoMap.get(key);
+      if (!item.description || item.description === "Açıklama eklenmedi.") {
+        item.description = CUSTOM_DESCRIPTIONS[item.name] || item.description;
+      }
+      finalRepos.push(item);
+      addedNames.add(key);
+    }
+  }
+
+  // 2. Kalan repoları yıldız ve güncelleme tarihine göre sıralayıp ekle
+  const remaining = Array.from(repoMap.values())
+    .filter(r => !addedNames.has(r.name.toLowerCase()))
+    .sort((a, b) => (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at)));
+
+  for (const r of remaining) {
+    if (finalRepos.length >= 8) break;
+    if (!r.description || r.description === "Açıklama eklenmedi.") {
+      r.description = CUSTOM_DESCRIPTIONS[r.name] || r.description;
+    }
+    finalRepos.push(r);
+  }
+
+  let formattedCommits = prevData?.user?.total_commits || "1.3K+" ;
   if (gqlData?.totalCommits && gqlData.totalCommits > 0) {
     const c = gqlData.totalCommits;
     formattedCommits = c >= 1000 ? `${(c / 1000).toFixed(1)}K+` : `${c}+`;
@@ -230,6 +289,7 @@ async function main() {
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(output, null, 2) + '\n', 'utf-8');
   console.log(`[Sync] Successfully updated ${OUTPUT_FILE}`);
   console.log(`[Sync] Repos count: ${output.repos.length}, Total Commits: ${output.user.total_commits}`);
+  console.log(`[Sync] Featured Repos: ${output.repos.map(r => r.name).join(', ')}`);
 }
 
 main().catch(err => {

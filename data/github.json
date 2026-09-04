@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T16:25:39.939Z",
+  "updated_at": "2026-09-04T22:55:52.171Z",
   "user": {
     "login": "eekilinc",
     "name": "Ekrem Eşref KILINÇ",
@@ -8,51 +8,47 @@
     "public_repos": 18,
     "followers": 36,
     "total_stars": 17,
-    "total_commits": "494+"
+    "total_commits": "493+"
   },
   "repos": [
     {
-      "name": "koza_rc_car",
-      "html_url": "https://github.com/eekilinc/koza_rc_car",
-      "description": "Açıklama eklenmedi.",
-      "language": "Dart",
+      "name": "indirgitsin",
+      "html_url": "https://github.com/eekilinc/indirgitsin",
+      "description": "Kotlin ve Jetpack Compose ile Android video/ses indirme yöneticisi. Paralel aktarım, sesli video birleştirme ve kalıcı kuyruk.",
+      "language": "Kotlin",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-01-08T09:23:24Z",
-      "topics": [],
-      "homepage": ""
+      "pushed_at": "2026-09-01T13:08:49Z",
+      "topics": [
+        "android",
+        "download-manager",
+        "jetpack-compose",
+        "kotlin",
+        "mediastore",
+        "workmanager"
+      ],
+      "homepage": "https://github.com/eekilinc/indirgitsin/releases/latest"
     },
     {
-      "name": "learnnSql",
-      "html_url": "https://github.com/eekilinc/learnnSql",
-      "description": "Açıklama eklenmedi.",
-      "language": "C#",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "pushed_at": "2026-03-16T11:47:42Z",
-      "topics": [],
-      "homepage": ""
-    },
-    {
-      "name": "ocr-capture",
-      "html_url": "https://github.com/eekilinc/ocr-capture",
-      "description": "Açıklama eklenmedi.",
+      "name": "MyFinans",
+      "html_url": "https://github.com/eekilinc/MyFinans",
+      "description": "💰 React + Capacitor mobil/web arayüzü ve Node.js backend ile kişisel finans takibi",
       "language": "TypeScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-08-27T23:05:54Z",
-      "topics": [],
-      "homepage": ""
-    },
-    {
-      "name": "blutoothwithclassicsandble",
-      "html_url": "https://github.com/eekilinc/blutoothwithclassicsandble",
-      "description": "Açıklama eklenmedi.",
-      "language": "Dart",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "pushed_at": "2025-12-05T23:52:43Z",
-      "topics": [],
+      "pushed_at": "2026-09-03T00:02:25Z",
+      "topics": [
+        "biometric-auth",
+        "capacitor",
+        "docker",
+        "express",
+        "finance-tracker",
+        "mobile-app",
+        "nodejs",
+        "personal-finance",
+        "react",
+        "typescript"
+      ],
       "homepage": ""
     },
     {
@@ -68,7 +64,14 @@
         "android",
         "audio-player",
         "dart",
-        "ezan"
+        "ezan",
+        "flutter",
+        "ios",
+        "islamic",
+        "local-notifications",
+        "muslim-app",
+        "namaz-vakitleri",
+        "prayer-times"
       ],
       "homepage": ""
     },
@@ -85,8 +88,56 @@
         "dotnet",
         "education",
         "exam-evaluation",
-        "mvvm"
+        "mvvm",
+        "omr",
+        "optical-mark-recognition",
+        "windows-desktop",
+        "wpf"
       ],
+      "homepage": ""
+    },
+    {
+      "name": "ocr-capture",
+      "html_url": "https://github.com/eekilinc/ocr-capture",
+      "description": "🔍 Tauri ve Rust altyapısıyla geliştirilmiş yüksek hızlı ekran görüntüsü ve OCR metin tanıma aracı.",
+      "language": "TypeScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-08-27T23:05:54Z",
+      "topics": [],
+      "homepage": ""
+    },
+    {
+      "name": "koza_rc_car",
+      "html_url": "https://github.com/eekilinc/koza_rc_car",
+      "description": "🚗 Flutter mobil arayüzü ile Bluetooth üzerinden kontrol edilen RC model araç projesi.",
+      "language": "Dart",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-01-08T09:23:24Z",
+      "topics": [],
+      "homepage": ""
+    },
+    {
+      "name": "eekilinc.github.io",
+      "html_url": "https://github.com/eekilinc/eekilinc.github.io",
+      "description": "👨‍💻 Ekrem Eşref KILINÇ — Kişisel Portfolyo | Flutter · Web · Masaüstü Geliştirici",
+      "language": "HTML",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-09-04T16:25:40Z",
+      "topics": [],
+      "homepage": ""
+    },
+    {
+      "name": "Postaci",
+      "html_url": "https://github.com/eekilinc/Postaci",
+      "description": "Açıklama eklenmedi.",
+      "language": "TypeScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-09-04T15:17:05Z",
+      "topics": [],
       "homepage": ""
     }
   ]
