@@ -1,0 +1,49 @@
+name: Sync GitHub Data
+
+on:
+  schedule:
+    # Her 12 saatte bir otomatik çalışır (00:00 ve 12:00 UTC)
+    - cron: '0 */12 * * *'
+  workflow_dispatch: # GitHub web arayüzünden tek tıkla manuel tetiklenebilir
+  push:
+    branches:
+      - master
+      - main
+    paths-ignore:
+      - 'data/github.json'
+      - '.gitignore'
+      - '*.md'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Node.js Ortamını Kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: GitHub Verilerini Güncelle
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/sync-data.mjs
+
+      - name: Değişiklikleri Kontrol Et ve Commit Et
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if git diff --quiet data/github.json; then
+            echo "Herhangi bir veri değişikliği bulunamadı. Commit atlanıyor."
+          else
+            git add data/github.json
+            git commit -m "chore(data): auto-sync github profile & projects [skip ci]"
+            git push
+            echo "Yeni GitHub verileri başarıyla repoya commit edildi ve pushlandı."
+          fi

@@ -93,7 +93,7 @@ section { padding: 64px 0; }
 .card {
   background: var(--card); border: 1px solid var(--border); border-radius: 16px;
   padding: 22px; transition: transform .18s, border-color .18s, box-shadow .25s;
-  display: flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden;
 }
 .card::before {
   content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
@@ -101,14 +101,45 @@ section { padding: 64px 0; }
 }
 .card:hover { transform: translateY(-4px); border-color: #35406e; box-shadow: 0 14px 34px rgba(0,0,0,.35); }
 .card:hover::before { opacity: 1; }
-.card h3 { font-size: 18px; }
+.card-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+}
+.card h3 { font-size: 18px; font-weight: 600; line-height: 1.3; }
 .card h3 a { color: var(--text); text-decoration: none; }
 .card h3 a:hover { color: var(--blue); }
-.card p { color: var(--muted); font-size: 14.5px; flex-grow: 1; min-height: 44px; }
-.meta { display: flex; align-items: center; gap: 16px; font-size: 13.5px; color: var(--muted); }
-.dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: -1px; }
+.card-actions { display: inline-flex; align-items: center; gap: 6px; }
+.action-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 8px;
+  color: var(--muted); background: rgba(255,255,255,.03);
+  border: 1px solid var(--border); text-decoration: none;
+  transition: all .2s;
+}
+.action-btn:hover {
+  color: var(--blue); border-color: var(--blue); background: rgba(56,189,248,.1);
+}
+.card p { color: var(--muted); font-size: 14px; flex-grow: 1; min-height: 42px; line-height: 1.55; }
+.meta { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: -1px; }
 .topics { display: flex; flex-wrap: wrap; gap: 6px; }
 .topic { font-size: 11.5px; color: var(--blue); background: rgba(56,189,248,.09); border: 1px solid rgba(56,189,248,.25); padding: 2px 9px; border-radius: 999px; }
+
+/* Skeleton Loading Animasyonu */
+.skeleton-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 22px; display: flex; flex-direction: column; gap: 14px; min-height: 190px;
+}
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 760px; margin: 0 auto; }
 .skill {
   border: 1px solid var(--border); background: var(--card); border-radius: 999px;
@@ -163,16 +194,22 @@ footer a { color: var(--blue); text-decoration: none; }
     <div class="stat reveal"><b id="st-repos">–</b><span>Repo</span></div>
     <div class="stat reveal"><b id="st-followers">–</b><span>Takipçi</span></div>
     <div class="stat reveal"><b id="st-stars">–</b><span>Yıldız</span></div>
-    <div class="stat reveal"><b id="st-commits">1.3K+</b><span>Commit</span></div>
+    <div class="stat reveal"><b id="st-commits">–</b><span>Commit</span></div>
   </div>
 </header>
 
 <section id="projeler">
   <div class="container">
     <h2 class="sec-title">Öne Çıkan <span class="grad-text">Projeler</span></h2>
-    <p class="sec-sub">Canlı verilerle — GitHub'dan anlık çekiliyor</p>
+    <p class="sec-sub">GitHub ile otomatik senkronize edilen güncel çalışmalar</p>
     <div class="grid" id="repo-grid">
-      <div class="card"><h3>Yükleniyor…</h3><p>Projeler GitHub'dan getiriliyor.</p></div>
+      <!-- Başlangıçta Shimmer Skeleton kartları gösterilir -->
+      <div class="skeleton-card"><div class="shimmer" style="height:22px;width:60%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:80%;"></div></div>
+      <div class="skeleton-card"><div class="shimmer" style="height:22px;width:50%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:75%;"></div></div>
+      <div class="skeleton-card"><div class="shimmer" style="height:22px;width:65%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:70%;"></div></div>
+      <div class="skeleton-card"><div class="shimmer" style="height:22px;width:55%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:85%;"></div></div>
+      <div class="skeleton-card"><div class="shimmer" style="height:22px;width:45%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:65%;"></div></div>
+      <div class="skeleton-card"><div class="shimmer" style="height:22px;width:70%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:80%;"></div></div>
     </div>
   </div>
 </section>
@@ -206,49 +243,147 @@ footer a { color: var(--blue); text-decoration: none; }
 </footer>
 
 <script>
+// Rol Daktilo Efekti
 const roles = ["Flutter Geliştirici", "Web & Masaüstü Uygulamaları", "Açık Kaynak Tutkunu", "Öğrenmeye Açık Mühendis Adayı"];
 let ri = 0, ci = 0, del = false;
 (function type() {
   const t = roles[ri];
-  document.getElementById("typed").textContent = del ? t.slice(0, ci--) : t.slice(0, ci++);
+  const el = document.getElementById("typed");
+  if (el) el.textContent = del ? t.slice(0, ci--) : t.slice(0, ci++);
   let d = del ? 40 : 85;
   if (!del && ci > t.length) { del = true; d = 1600; }
   else if (del && ci < 0) { del = false; ri = (ri + 1) % roles.length; d = 350; }
   setTimeout(type, d);
 })();
 
-const LC = { JavaScript:"#f1e05a", TypeScript:"#3178c6", Dart:"#00B4AB", PHP:"#4F5D95",
-  HTML:"#e34c26", CSS:"#563d7c", "C#":"#178600", Python:"#3572A5", Rust:"#dea584", Blade:"#f7523f" };
+const LC = {
+  JavaScript:"#f1e05a", TypeScript:"#3178c6", Dart:"#00B4AB", PHP:"#4F5D95",
+  HTML:"#e34c26", CSS:"#563d7c", "C#":"#178600", Python:"#3572A5",
+  Rust:"#dea584", Blade:"#f7523f"
+};
 
-fetch("https://api.github.com/users/eekilinc")
-  .then(r => r.json())
-  .then(u => {
-    document.getElementById("st-repos").textContent = u.public_repos;
-    document.getElementById("st-followers").textContent = u.followers;
-  });
+// Sayfa ilk açıldığında veya ağ çöktüğünde bile sayfanın kusursuz görünmesini sağlayan yedek veri seti
+const FALLBACK_DATA = {
+  user: {
+    public_repos: 18,
+    followers: 36,
+    total_stars: 17,
+    total_commits: "1.3K+"
+  },
+  repos: [
+    {
+      name: "EzanApp",
+      html_url: "https://github.com/eekilinc/EzanApp",
+      description: "🕌 Islamic prayer times & customizable reminder app built with Flutter",
+      language: "Dart",
+      stargazers_count: 6,
+      pushed_at: "2026-08-25T14:30:00Z",
+      topics: ["flutter", "dart", "prayer-times", "mobile-app"],
+      homepage: ""
+    },
+    {
+      name: "optikdegerlendirme",
+      html_url: "https://github.com/eekilinc/optikdegerlendirme",
+      description: "📋 Optik form okuma ve sınav değerlendirme için modern WPF masaüstü uygulaması (OMR)",
+      language: "C#",
+      stargazers_count: 3,
+      pushed_at: "2026-08-22T10:15:00Z",
+      topics: ["csharp", "wpf", "omr", "desktop-app"],
+      homepage: ""
+    },
+    {
+      name: "ocr-capture",
+      html_url: "https://github.com/eekilinc/ocr-capture",
+      description: "🔍 Tauri ve Rust altyapısıyla geliştirilmiş yüksek hızlı ekran görüntüsü ve OCR metin tanıma aracı",
+      language: "Rust",
+      stargazers_count: 3,
+      pushed_at: "2026-08-20T18:40:00Z",
+      topics: ["tauri", "rust", "ocr", "desktop"],
+      homepage: ""
+    },
+    {
+      name: "pdfstudio",
+      html_url: "https://github.com/eekilinc/pdfstudio",
+      description: "📄 PDF belgelerini birleştirme, düzenleme ve optimize etme aracı",
+      language: "TypeScript",
+      stargazers_count: 2,
+      pushed_at: "2026-08-18T16:20:00Z",
+      topics: ["pdf", "typescript", "tools"],
+      homepage: ""
+    },
+    {
+      name: "algoflow",
+      html_url: "https://github.com/eekilinc/algoflow",
+      description: "⚡ Algoritma ve veri yapılarını görselleştirerek öğrenmeyi kolaylaştıran interaktif uygulama",
+      language: "JavaScript",
+      stargazers_count: 2,
+      pushed_at: "2026-08-15T09:10:00Z",
+      topics: ["algorithms", "visualization"],
+      homepage: ""
+    },
+    {
+      name: "koza_rc_car",
+      html_url: "https://github.com/eekilinc/koza_rc_car",
+      description: "🚗 Flutter mobil arayüzü ile Bluetooth üzerinden kontrol edilen uzaktan kumandalı araç",
+      language: "Dart",
+      stargazers_count: 2,
+      pushed_at: "2026-08-10T11:45:00Z",
+      topics: ["flutter", "arduino", "bluetooth"],
+      homepage: ""
+    }
+  ]
+};
 
-fetch("https://api.github.com/users/eekilinc/repos?per_page=100&sort=updated")
-  .then(r => r.json())
-  .then(repos => {
-    const own = repos.filter(r => !r.fork && r.name !== "eekilinc");
-    const stars = own.reduce((a, r) => a + r.stargazers_count, 0);
-    document.getElementById("st-stars").textContent = stars;
-    const top = [...own].sort((a,b) =>
-      (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at))
-    ).slice(0, 6);
-    document.getElementById("repo-grid").innerHTML = top.map(r => `
-      <article class="card reveal">
-        <h3><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h3>
-        <p>${r.description || "Açıklama eklenmedi."}</p>
-        ${r.topics?.length ? `<div class="topics">${r.topics.slice(0,3).map(t => `<span class="topic">${t}</span>`).join("")}</div>` : ""}
-        <div class="meta">
-          <span>${r.language ? `<i class="dot" style="background:${LC[r.language] || "#8b5cf6"}"></i>${r.language}` : ""}</span>
-          <span>★ ${r.stargazers_count}</span>
-          <span>Updated ${new Date(r.pushed_at).toLocaleDateString("tr-TR")}</span>
+function renderStats(user) {
+  if (!user) return;
+  const reposEl = document.getElementById("st-repos");
+  const followersEl = document.getElementById("st-followers");
+  const starsEl = document.getElementById("st-stars");
+  const commitsEl = document.getElementById("st-commits");
+
+  if (reposEl && user.public_repos !== undefined) reposEl.textContent = user.public_repos;
+  if (followersEl && user.followers !== undefined) followersEl.textContent = user.followers;
+  if (starsEl && user.total_stars !== undefined) starsEl.textContent = user.total_stars;
+  if (commitsEl && user.total_commits !== undefined) commitsEl.textContent = user.total_commits;
+}
+
+function renderRepos(repos) {
+  const grid = document.getElementById("repo-grid");
+  if (!grid || !Array.isArray(repos) || repos.length === 0) return;
+
+  grid.innerHTML = repos.map(r => {
+    const updated = r.pushed_at ? new Date(r.pushed_at).toLocaleDateString("tr-TR", { day: "numeric", month: "short", year: "numeric" }) : "";
+    const demoLink = r.homepage ? `
+      <a href="${r.homepage}" target="_blank" rel="noopener" class="action-btn" title="Canlı Demo">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>` : "";
+
+    const codeLink = `
+      <a href="${r.html_url}" target="_blank" rel="noopener" class="action-btn" title="Kaynak Kod">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      </a>`;
+
+    return `
+      <article class="card reveal in">
+        <div class="card-header">
+          <h3><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h3>
+          <div class="card-actions">
+            ${demoLink}
+            ${codeLink}
+          </div>
         </div>
-      </article>`).join("");
-    observeReveals();
-  });
+        <p>${r.description || "Açıklama eklenmedi."}</p>
+        ${r.topics?.length ? `<div class="topics">${r.topics.slice(0, 3).map(t => `<span class="topic">${t}</span>`).join("")}</div>` : ""}
+        <div class="meta">
+          ${r.language ? `<span><i class="dot" style="background:${LC[r.language] || "#8b5cf6"}"></i>${r.language}</span>` : ""}
+          <span>★ ${r.stargazers_count ?? 0}</span>
+          ${updated ? `<span>Güncellendi: ${updated}</span>` : ""}
+        </div>
+      </article>`;
+  }).join("");
+
+  observeReveals();
+}
 
 function observeReveals() {
   const io = new IntersectionObserver(es => es.forEach(e => {
@@ -256,7 +391,110 @@ function observeReveals() {
   }), { threshold: .12 });
   document.querySelectorAll(".reveal:not(.in)").forEach(el => io.observe(el));
 }
-observeReveals();
+
+// Akıllı Katmanlı Veri Getirme (Cache -> Static File -> Live API -> Fallback)
+async function fetchPortfolioData() {
+  const CACHE_KEY = "eekilinc_gh_cache";
+  const CACHE_TIME_KEY = "eekilinc_gh_cache_time";
+  const CACHE_TTL = 30 * 60 * 1000; // 30 dakika
+
+  // 1. Katman: Tarayıcı önbelleği
+  try {
+    const cached = localStorage.getItem(CACHE_KEY);
+    const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
+    if (cached && cachedTime && (Date.now() - parseInt(cachedTime, 10) < CACHE_TTL)) {
+      const data = JSON.parse(cached);
+      renderStats(data.user);
+      renderRepos(data.repos);
+      console.log("[Portfolio] Veriler önbellekten (localStorage) yüklendi.");
+      return;
+    }
+  } catch (e) {
+    console.warn("[Portfolio] Önbellek okunamadı:", e);
+  }
+
+  // 2. Katman: Repodaki yerel senkronize JSON dosyası (GitHub Actions günceller)
+  try {
+    const res = await fetch(`data/github.json?v=${Date.now()}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.user && data.repos) {
+        renderStats(data.user);
+        renderRepos(data.repos);
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+          localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+        } catch {}
+        console.log("[Portfolio] Veriler data/github.json dosyasından başarıyla yüklendi.");
+        return;
+      }
+    }
+  } catch (e) {
+    console.warn("[Portfolio] data/github.json yüklenemedi, canlı API deneniyor:", e);
+  }
+
+  // 3. Katman: Canlı GitHub REST API (Rate limit izin verirse)
+  try {
+    const [uRes, rRes] = await Promise.all([
+      fetch("https://api.github.com/users/eekilinc"),
+      fetch("https://api.github.com/users/eekilinc/repos?per_page=100&sort=updated")
+    ]);
+
+    if (uRes.ok && rRes.ok) {
+      const u = await uRes.json();
+      const repos = await rRes.json();
+
+      if (Array.isArray(repos)) {
+        const own = repos.filter(r => !r.fork && r.name !== "eekilinc");
+        const stars = own.reduce((a, r) => a + (r.stargazers_count || 0), 0);
+        const top = [...own].sort((a, b) =>
+          (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at))
+        ).slice(0, 6);
+
+        const liveData = {
+          user: {
+            public_repos: u.public_repos,
+            followers: u.followers,
+            total_stars: stars,
+            total_commits: "1.3K+"
+          },
+          repos: top.map(r => ({
+            name: r.name,
+            html_url: r.html_url,
+            description: r.description,
+            language: r.language,
+            stargazers_count: r.stargazers_count,
+            pushed_at: r.pushed_at,
+            topics: r.topics || [],
+            homepage: r.homepage || ""
+          }))
+        };
+
+        renderStats(liveData.user);
+        renderRepos(liveData.repos);
+
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify(liveData));
+          localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+        } catch {}
+        console.log("[Portfolio] Veriler canlı GitHub API'sinden çekildi.");
+        return;
+      }
+    }
+  } catch (e) {
+    console.warn("[Portfolio] Canlı GitHub API çağrısı başarısız:", e);
+  }
+
+  // 4. Katman: En güvenli Fallback (Sayfa asla boş kalmaz ve hata göstermez)
+  console.log("[Portfolio] Fallback veri seti devreye girdi.");
+  renderStats(FALLBACK_DATA.user);
+  renderRepos(FALLBACK_DATA.repos);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchPortfolioData();
+  observeReveals();
+});
 </script>
 </body>
 </html>
