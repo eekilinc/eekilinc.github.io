@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T23:14:48.622Z",
+  "updated_at": "2026-09-05T02:40:55.496Z",
   "user": {
     "login": "eekilinc",
     "name": "Ekrem Eşref KILINÇ",
@@ -8,12 +8,12 @@
     "public_repos": 18,
     "followers": 36,
     "total_stars": 17,
-    "total_commits": "495+"
+    "total_commits": "500+"
   },
   "repos": [
     {
-      "name": "indirgitsin",
-      "html_url": "https://github.com/eekilinc/indirgitsin",
+      "name": "Indirgitsin",
+      "html_url": "https://github.com/eekilinc/Indirgitsin",
       "description": "Kotlin ve Jetpack Compose ile Android video/ses indirme yöneticisi. Paralel aktarım, sesli video birleştirme ve kalıcı kuyruk.",
       "language": "Kotlin",
       "stargazers_count": 0,
@@ -108,24 +108,24 @@
       "homepage": ""
     },
     {
+      "name": "KozaRcCar",
+      "html_url": "https://github.com/eekilinc/KozaRcCar",
+      "description": "Açıklama eklenmedi.",
+      "language": "Dart",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-09-05T00:48:19Z",
+      "topics": [],
+      "homepage": ""
+    },
+    {
       "name": "eekilinc.github.io",
       "html_url": "https://github.com/eekilinc/eekilinc.github.io",
       "description": "👨‍💻 Ekrem Eşref KILINÇ — Kişisel Portfolyo | Flutter · Web · Masaüstü Geliştirici",
       "language": "HTML",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-09-04T23:14:32Z",
-      "topics": [],
-      "homepage": ""
-    },
-    {
-      "name": "Postaci",
-      "html_url": "https://github.com/eekilinc/Postaci",
-      "description": "Açıklama eklenmedi.",
-      "language": "TypeScript",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "pushed_at": "2026-09-04T15:17:05Z",
+      "pushed_at": "2026-09-04T23:14:49Z",
       "topics": [],
       "homepage": ""
     }
