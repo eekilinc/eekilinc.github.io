@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T21:37:57.070Z",
+  "updated_at": "2026-09-08T02:48:36.821Z",
   "user": {
     "login": "eekilinc",
     "name": "Ekrem Eşref KILINÇ",
@@ -8,7 +8,7 @@
     "public_repos": 19,
     "followers": 36,
     "total_stars": 17,
-    "total_commits": "535+"
+    "total_commits": "545+"
   },
   "repos": [
     {
@@ -88,13 +88,19 @@
     {
       "name": "Ocr-Capture",
       "html_url": "https://github.com/eekilinc/Ocr-Capture",
-      "description": "Açıklama eklenmedi.",
+      "description": "⚡ Ekranınızdan ışık hızında, çevrimdışı ve akıllı metin ayıklama aracı. Tauri v2, Rust ve Tesseract OCR ile güçlendirilmiş, masaüstü ekran alıntısı ve OCR çözümü.",
       "language": "TypeScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-09-07T21:29:23Z",
-      "topics": [],
-      "homepage": ""
+      "pushed_at": "2026-09-07T22:39:28Z",
+      "topics": [
+        "linux",
+        "macos",
+        "ocr",
+        "powertoys",
+        "react"
+      ],
+      "homepage": "https://github.com/eekilinc/Ocr-Capture/releases"
     },
     {
       "name": "koza_rc_car",
@@ -108,32 +114,38 @@
       "homepage": ""
     },
     {
+      "name": "PdfStudio",
+      "html_url": "https://github.com/eekilinc/PdfStudio",
+      "description": "🚀 %100 çevrimdışı PDF düzenleme paketi — Tauri 2 (Rust) + React 19, OCR, Word/Excel dışa aktarma",
+      "language": "TypeScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-09-08T00:05:16Z",
+      "topics": [
+        "document-viewer",
+        "ocr",
+        "offline-first",
+        "pdf",
+        "pdf-annotation",
+        "pdf-editor",
+        "react",
+        "rust",
+        "tauri",
+        "typescript",
+        "windows-desktop"
+      ],
+      "homepage": ""
+    },
+    {
       "name": "eekilinc.github.io",
       "html_url": "https://github.com/eekilinc/eekilinc.github.io",
       "description": "👨‍💻 Ekrem Eşref KILINÇ — Kişisel Portfolyo | Flutter · Web · Masaüstü Geliştirici",
       "language": "HTML",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-09-07T21:37:44Z",
+      "pushed_at": "2026-09-07T21:37:58Z",
       "topics": [],
       "homepage": ""
-    },
-    {
-      "name": "KozaRcCar",
-      "html_url": "https://github.com/eekilinc/KozaRcCar",
-      "description": "🏎️ HC-05/06 ve BLE destekli, telemetri, seri monitör ve kokpit arayüzlü gelişmiş Flutter RC araba ve robot kontrol uygulaması.",
-      "language": "Dart",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "pushed_at": "2026-09-07T20:35:10Z",
-      "topics": [
-        "arduino",
-        "ble",
-        "bluetooth",
-        "bluetooth-classic",
-        "dart"
-      ],
-      "homepage": "https://github.com/eekilinc/KozaRcCar/releases/latest"
     }
   ]
 }
