@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T08:52:54.555Z",
+  "updated_at": "2026-09-08T15:54:51.905Z",
   "user": {
     "login": "eekilinc",
     "name": "Ekrem Eşref KILINÇ",
@@ -8,7 +8,7 @@
     "public_repos": 19,
     "followers": 36,
     "total_stars": 0,
-    "total_commits": "547+"
+    "total_commits": "549+"
   },
   "repos": [
     {
@@ -152,8 +152,8 @@
       "homepage": "https://github.com/eekilinc/KozaRcCar/releases/latest"
     },
     {
-      "name": "algoflow",
-      "html_url": "https://github.com/eekilinc/algoflow",
+      "name": "AlgoFlow",
+      "html_url": "https://github.com/eekilinc/AlgoFlow",
       "description": "⚡ Sürükle-bırak algoritma & akış şeması stüdyosu: canlı yorumlayıcı + 6 dile kod üretimi",
       "language": "JavaScript",
       "stargazers_count": 0,
@@ -174,13 +174,13 @@
       "homepage": ""
     },
     {
-      "name": "optikdegerlendirme",
-      "html_url": "https://github.com/eekilinc/optikdegerlendirme",
+      "name": "OptikDegerlendirme",
+      "html_url": "https://github.com/eekilinc/OptikDegerlendirme",
       "description": "📋 Optik form okuma ve sınav değerlendirme için WPF masaüstü uygulaması (OMR)",
       "language": "C#",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-04-15T17:01:42Z",
+      "pushed_at": "2026-09-08T11:39:41Z",
       "topics": [
         "csharp",
         "dotnet",
@@ -250,7 +250,7 @@
       "language": "TypeScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-09-04T15:17:05Z",
+      "pushed_at": "2026-09-08T13:24:44Z",
       "topics": [],
       "homepage": ""
     },
