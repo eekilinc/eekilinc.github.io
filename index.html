@@ -733,10 +733,10 @@
     </div>
 
     <div class="stats-strip">
-      <div class="stat reveal"><b id="st-repos">–</b><span>Repo</span></div>
-      <div class="stat reveal"><b id="st-followers">–</b><span>Takipçi</span></div>
-      <div class="stat reveal"><b id="st-stars">–</b><span>Yıldız</span></div>
-      <div class="stat reveal"><b id="st-commits">–</b><span>Commit</span></div>
+      <div class="stat reveal"><b id="st-repos">19</b><span>Repo</span></div>
+      <div class="stat reveal"><b id="st-followers">36</b><span>Takipçi</span></div>
+      <div class="stat reveal"><b id="st-stars">0</b><span>Yıldız</span></div>
+      <div class="stat reveal"><b id="st-commits">560+</b><span>Katkı & Commit</span></div>
     </div>
   </header>
 
@@ -775,43 +775,25 @@
       <!-- Filtreleme Butonları -->
       <div class="filter-pills" id="filter-pills">
         <button class="pill active" data-filter="all">Tümü</button>
-        <button class="pill" data-filter="mobile">Flutter / Mobil</button>
-        <button class="pill" data-filter="desktop">Masaüstü & C#</button>
+        <button class="pill" data-filter="mobile">Flutter & Mobil</button>
+        <button class="pill" data-filter="desktop">Masaüstü & Sistem</button>
         <button class="pill" data-filter="web">Web & Araçlar</button>
       </div>
 
       <div class="grid" id="repo-grid">
-        <!-- Başlangıçta Shimmer Skeleton kartları gösterilir -->
-        <div class="skeleton-card">
-          <div class="shimmer" style="height:22px;width:60%;"></div>
-          <div class="shimmer" style="height:44px;width:100%;"></div>
-          <div class="shimmer" style="height:18px;width:80%;"></div>
-        </div>
-        <div class="skeleton-card">
-          <div class="shimmer" style="height:22px;width:50%;"></div>
-          <div class="shimmer" style="height:44px;width:100%;"></div>
-          <div class="shimmer" style="height:18px;width:75%;"></div>
-        </div>
-        <div class="skeleton-card">
-          <div class="shimmer" style="height:22px;width:65%;"></div>
-          <div class="shimmer" style="height:44px;width:100%;"></div>
-          <div class="shimmer" style="height:18px;width:70%;"></div>
-        </div>
-        <div class="skeleton-card">
-          <div class="shimmer" style="height:22px;width:55%;"></div>
-          <div class="shimmer" style="height:44px;width:100%;"></div>
-          <div class="shimmer" style="height:18px;width:85%;"></div>
-        </div>
-        <div class="skeleton-card">
-          <div class="shimmer" style="height:22px;width:45%;"></div>
-          <div class="shimmer" style="height:44px;width:100%;"></div>
-          <div class="shimmer" style="height:18px;width:65%;"></div>
-        </div>
-        <div class="skeleton-card">
-          <div class="shimmer" style="height:22px;width:70%;"></div>
-          <div class="shimmer" style="height:44px;width:100%;"></div>
-          <div class="shimmer" style="height:18px;width:80%;"></div>
-        </div>
+        <!-- Başlangıçta 12 adet Shimmer Skeleton kartı gösterilir -->
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:60%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:80%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:50%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:75%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:65%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:70%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:55%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:85%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:45%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:65%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:70%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:80%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:58%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:72%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:62%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:78%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:52%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:68%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:68%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:82%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:48%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:74%;"></div></div>
+        <div class="skeleton-card"><div class="shimmer" style="height:22px;width:64%;"></div><div class="shimmer" style="height:44px;width:100%;"></div><div class="shimmer" style="height:18px;width:76%;"></div></div>
       </div>
     </div>
   </section>
@@ -879,15 +861,15 @@
     // Sayfa ilk açıldığında veya ağ çöktüğünde bile sayfanın kusursuz görünmesini sağlayan yedek veri seti
     const FALLBACK_DATA = {
       user: {
-        public_repos: 18,
+        public_repos: 19,
         followers: 36,
-        total_stars: 17,
-        total_commits: "493+"
+        total_stars: 0,
+        total_commits: "560+"
       },
       repos: [
         {
-          name: "indirgitsin",
-          html_url: "https://github.com/eekilinc/indirgitsin",
+          name: "Indirgitsin",
+          html_url: "https://github.com/eekilinc/Indirgitsin",
           description: "Kotlin ve Jetpack Compose ile Android video/ses indirme yöneticisi. Paralel aktarım, sesli video birleştirme ve kalıcı kuyruk.",
           language: "Kotlin",
           stargazers_count: 0,
@@ -906,63 +888,133 @@
           homepage: ""
         },
         {
+          name: "VoltGet",
+          html_url: "https://github.com/eekilinc/VoltGet",
+          description: "⚡ Ultra-hızlı indirme yöneticisi ve akıllı medya yakalayıcı. 8 kanallı çoklu indirme, stream grabber (yt-dlp + FFmpeg) ve modern IDM alternatifi.",
+          language: "TypeScript",
+          stargazers_count: 0,
+          pushed_at: "2026-09-07T19:45:45Z",
+          topics: ["download-manager", "electron", "ffmpeg", "react", "typescript"],
+          homepage: "https://github.com/eekilinc/VoltGet"
+        },
+        {
+          name: "PdfStudio",
+          html_url: "https://github.com/eekilinc/PdfStudio",
+          description: "🚀 %100 çevrimdışı PDF düzenleme paketi — Tauri 2 (Rust) + React 19, OCR, Word/Excel dışa aktarma.",
+          language: "TypeScript",
+          stargazers_count: 0,
+          pushed_at: "2026-09-08T08:23:28Z",
+          topics: ["pdf", "tauri", "rust", "react", "typescript", "ocr"],
+          homepage: ""
+        },
+        {
+          name: "Ocr-Capture",
+          html_url: "https://github.com/eekilinc/Ocr-Capture",
+          description: "⚡ Ekranınızdan ışık hızında, çevrimdışı metin ayıklama aracı. Tauri v2, Rust ve Tesseract OCR ile masaüstü ekran alıntısı.",
+          language: "TypeScript",
+          stargazers_count: 0,
+          pushed_at: "2026-09-07T22:39:28Z",
+          topics: ["tauri", "rust", "ocr", "screen-capture", "typescript"],
+          homepage: "https://github.com/eekilinc/Ocr-Capture/releases"
+        },
+        {
           name: "EzanApp",
           html_url: "https://github.com/eekilinc/EzanApp",
-          description: "🕌 Islamic prayer times & customizable reminder app built with Flutter",
+          description: "🕌 Flutter ile geliştirilmiş namaz vakitleri, ezan sesli bildirimler ve kıble pusulası uygulaması.",
           language: "Dart",
-          stargazers_count: 6,
-          pushed_at: "2026-08-25T14:30:00Z",
-          topics: ["flutter", "dart", "prayer-times", "mobile-app"],
+          stargazers_count: 0,
+          pushed_at: "2026-09-02T00:45:52Z",
+          topics: ["flutter", "dart", "prayer-times", "mobile-app", "android"],
+          homepage: ""
+        },
+        {
+          name: "KozaRcCar",
+          html_url: "https://github.com/eekilinc/KozaRcCar",
+          description: "🏎️ HC-05/06 ve BLE destekli, telemetri ve kokpit arayüzlü gelişmiş Flutter RC araba ve robot kontrol uygulaması.",
+          language: "Dart",
+          stargazers_count: 0,
+          pushed_at: "2026-09-07T20:35:10Z",
+          topics: ["flutter", "dart", "bluetooth", "arduino", "esp32", "robotics"],
+          homepage: "https://github.com/eekilinc/KozaRcCar/releases/latest"
+        },
+        {
+          name: "algoflow",
+          html_url: "https://github.com/eekilinc/algoflow",
+          description: "⚡ Sürükle-bırak algoritma & akış şeması stüdyosu: canlı yorumlayıcı ve 6 farklı programlama diline kod üretimi.",
+          language: "JavaScript",
+          stargazers_count: 0,
+          pushed_at: "2026-08-23T23:15:10Z",
+          topics: ["flowchart", "algorithm", "code-generation", "visual-programming"],
           homepage: ""
         },
         {
           name: "optikdegerlendirme",
           html_url: "https://github.com/eekilinc/optikdegerlendirme",
-          description: "📋 Optik form okuma ve sınav değerlendirme için modern WPF masaüstü uygulaması (OMR)",
+          description: "📋 Optik form okuma ve sınav değerlendirme için WPF masaüstü uygulaması (OMR).",
           language: "C#",
-          stargazers_count: 3,
-          pushed_at: "2026-08-22T10:15:00Z",
-          topics: ["csharp", "wpf", "omr", "desktop-app"],
+          stargazers_count: 0,
+          pushed_at: "2026-04-15T17:01:42Z",
+          topics: ["csharp", "wpf", "omr", "dotnet", "desktop"],
           homepage: ""
         },
         {
-          name: "ocr-capture",
-          html_url: "https://github.com/eekilinc/ocr-capture",
-          description: "🔍 Tauri ve Rust altyapısıyla geliştirilmiş yüksek hızlı ekran görüntüsü ve OCR metin tanıma aracı",
-          language: "Rust",
-          stargazers_count: 3,
-          pushed_at: "2026-08-20T18:40:00Z",
-          topics: ["tauri", "rust", "ocr", "desktop"],
-          homepage: ""
-        },
-        {
-          name: "koza_rc_car",
-          html_url: "https://github.com/eekilinc/koza_rc_car",
-          description: "🚗 Flutter mobil arayüzü ile Bluetooth üzerinden kontrol edilen uzaktan kumandalı araç",
-          language: "Dart",
-          stargazers_count: 2,
-          pushed_at: "2026-08-10T11:45:00Z",
-          topics: ["flutter", "arduino", "bluetooth"],
+          name: "kozaders",
+          html_url: "https://github.com/eekilinc/kozaders",
+          description: "🎓 Laravel + Tailwind CSS ile geliştirilen Koza Ders eğitim platformu.",
+          language: "PHP",
+          stargazers_count: 0,
+          pushed_at: "2026-04-19T11:25:09Z",
+          topics: ["laravel", "php", "tailwindcss", "blade", "e-learning"],
           homepage: ""
         },
         {
           name: "learnnSql",
           html_url: "https://github.com/eekilinc/learnnSql",
-          description: "📊 İnteraktif SQL öğrenme ve veritabanı sorgulama pratik platformu.",
+          description: "📊 İnteraktif SQL öğrenme, veritabanı sorgulama ve pratik yapma platformu.",
           language: "C#",
           stargazers_count: 0,
           pushed_at: "2026-03-16T11:47:42Z",
-          topics: ["sql", "csharp", "learning"],
+          topics: ["sql", "csharp", "database", "learning"],
           homepage: ""
         },
         {
-          name: "pdfstudio",
-          html_url: "https://github.com/eekilinc/pdfstudio",
-          description: "📄 PDF belgelerini birleştirme, düzenleme ve optimize etme aracı",
+          name: "blutoothwithclassicsandble",
+          html_url: "https://github.com/eekilinc/blutoothwithclassicsandble",
+          description: "📡 Flutter ile Bluetooth Classic ve BLE (Düşük Enerji) haberleşme kütüphanesi ve örnekleri.",
+          language: "Dart",
+          stargazers_count: 0,
+          pushed_at: "2025-12-05T23:52:43Z",
+          topics: ["flutter", "dart", "bluetooth", "ble"],
+          homepage: ""
+        },
+        {
+          name: "calculatorwithelectron",
+          html_url: "https://github.com/eekilinc/calculatorwithelectron",
+          description: "🧮 Electron ve modern web teknolojileri ile geliştirilmiş masaüstü hesap makinesi uygulaması.",
+          language: "JavaScript",
+          stargazers_count: 0,
+          pushed_at: "2024-06-18T13:42:25Z",
+          topics: ["electron", "javascript", "desktop"],
+          homepage: ""
+        },
+        {
+          name: "Postaci",
+          html_url: "https://github.com/eekilinc/Postaci",
+          description: "📬 Modern API test ve HTTP istek yönetim aracı (geliştirici odaklı hafif Postman alternatifi).",
           language: "TypeScript",
-          stargazers_count: 2,
-          pushed_at: "2026-08-18T16:20:00Z",
-          topics: ["pdf", "typescript", "tools"],
+          stargazers_count: 0,
+          pushed_at: "2026-09-04T15:17:05Z",
+          topics: ["typescript", "api-testing", "tools"],
+          homepage: ""
+        },
+        {
+          name: "KozaBluetooh",
+          html_url: "https://github.com/eekilinc/KozaBluetooh",
+          description: "📶 C# ve .NET ile Bluetooth cihaz haberleşme, bağlantı yönetimi ve veri aktarım arayüzü.",
+          language: "C#",
+          stargazers_count: 0,
+          pushed_at: "2026-03-07T22:51:23Z",
+          topics: ["csharp", "dotnet", "bluetooth"],
           homepage: ""
         }
       ]
@@ -997,10 +1049,10 @@
           return lang === "dart" || lang === "kotlin" || topics.some(t => t.includes("flutter") || t.includes("dart") || t.includes("mobile") || t.includes("android") || t.includes("ios") || t.includes("kotlin") || t.includes("capacitor"));
         }
         if (currentFilter === "desktop") {
-          return lang === "c#" || lang === "rust" || topics.some(t => t.includes("desktop") || t.includes("wpf") || t.includes("tauri") || t.includes("csharp"));
+          return lang === "c#" || lang === "rust" || topics.some(t => t.includes("desktop") || t.includes("wpf") || t.includes("tauri") || t.includes("csharp") || t.includes("electron") || t.includes("windows"));
         }
         if (currentFilter === "web") {
-          return lang === "typescript" || lang === "javascript" || lang === "php" || lang === "html" || topics.some(t => t.includes("web") || t.includes("tools") || t.includes("react") || t.includes("finance"));
+          return lang === "typescript" || lang === "javascript" || lang === "php" || lang === "html" || topics.some(t => t.includes("web") || t.includes("tools") || t.includes("react") || t.includes("finance") || t.includes("laravel"));
         }
         return true;
       });
@@ -1053,8 +1105,8 @@
 
     // Akıllı Katmanlı Veri Getirme (Cache -> Static File -> Live API -> Fallback)
     async function fetchPortfolioData() {
-      const CACHE_KEY = "eekilinc_gh_cache_v2";
-      const CACHE_TIME_KEY = "eekilinc_gh_cache_time_v2";
+      const CACHE_KEY = "eekilinc_gh_cache_v3";
+      const CACHE_TIME_KEY = "eekilinc_gh_cache_time_v3";
       const CACHE_TTL = 30 * 60 * 1000; // 30 dakika
 
       // 1. Katman: Tarayıcı önbelleği
@@ -1110,14 +1162,14 @@
             const stars = own.reduce((a, r) => a + (r.stargazers_count || 0), 0);
             const top = [...own].sort((a, b) =>
               (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at))
-            ).slice(0, 6);
+            ).slice(0, 16);
 
             const liveData = {
               user: {
                 public_repos: u.public_repos,
                 followers: u.followers,
                 total_stars: stars,
-                total_commits: "1.3K+"
+                total_commits: "560+"
               },
               repos: top.map(r => ({
                 name: r.name,

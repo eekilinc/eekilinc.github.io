@@ -2,8 +2,8 @@ name: Sync GitHub Data
 
 on:
   schedule:
-    # Her 12 saatte bir otomatik çalışır (00:00 ve 12:00 UTC)
-    - cron: '0 */12 * * *'
+    # Her 6 saatte bir otomatik çalışır (00:00, 06:00, 12:00, 18:00 UTC)
+    - cron: '0 */6 * * *'
   workflow_dispatch: # GitHub web arayüzünden tek tıkla manuel tetiklenebilir
   push:
     branches:
