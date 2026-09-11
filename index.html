@@ -651,6 +651,209 @@
       transform: none;
     }
 
+    /* Terminal / Konsol Bileşeni Stilleri */
+    .term-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .term-chip-label {
+      font-size: 12.5px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .term-chip {
+      background: rgba(124, 58, 237, 0.12);
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      color: #c4b5fd;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .term-chip:hover {
+      background: rgba(124, 58, 237, 0.25);
+      border-color: rgba(124, 58, 237, 0.6);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .term-chip:active {
+      transform: translateY(0);
+    }
+
+    .terminal-window {
+      background: rgba(10, 14, 26, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(124, 58, 237, 0.2);
+      backdrop-filter: blur(16px);
+      overflow: hidden;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      position: relative;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: rgba(18, 24, 40, 0.98);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      user-select: none;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dot-btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+    .dot-btn:hover { opacity: 0.8; }
+
+    .terminal-title {
+      color: var(--muted);
+      font-size: 12.5px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .term-action-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .term-action-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .terminal-body {
+      padding: 18px 20px;
+      max-height: 420px;
+      min-height: 320px;
+      overflow-y: auto;
+      color: #e2e8f0;
+      font-size: 13.5px;
+      line-height: 1.6;
+      position: relative;
+      cursor: text;
+      transition: max-height 0.3s ease;
+    }
+
+    .terminal-body.term-expanded {
+      max-height: 650px;
+    }
+
+    .terminal-body::-webkit-scrollbar {
+      width: 6px;
+    }
+    .terminal-body::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+    }
+
+    .terminal-output {
+      margin-bottom: 8px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .terminal-line {
+      margin-bottom: 8px;
+    }
+
+    .terminal-prompt-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .term-user { color: #38bdf8; font-weight: 600; }
+    .term-at { color: #94a3b8; }
+    .term-host { color: #c084fc; font-weight: 600; }
+    .term-path { color: #4ade80; font-weight: 600; }
+
+    .terminal-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #f8fafc;
+      font-family: inherit;
+      font-size: inherit;
+      caret-color: #38bdf8;
+      padding: 0;
+      min-width: 50px;
+    }
+
+    /* Matrix Animasyonu Canvas & Overlay */
+    .matrix-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background: #000000;
+      border-radius: 0 0 14px 14px;
+    }
+
+    .matrix-overlay {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 12;
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid #22c55e;
+      color: #22c55e;
+      font-size: 11.5px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+      transition: all 0.2s;
+    }
+
+    .matrix-overlay:hover {
+      background: #22c55e;
+      color: #000;
+    }
+
     /* Mobil Uyumluluk */
     @media (max-width: 640px) {
       .nav-toggle {
@@ -688,6 +891,21 @@
         font-size: 12.5px;
         padding: 6px 12px;
       }
+
+      .terminal-body {
+        padding: 14px 12px;
+        font-size: 12px;
+        min-height: 280px;
+      }
+
+      .term-chip {
+        font-size: 11px;
+        padding: 4px 9px;
+      }
+
+      .terminal-title {
+        font-size: 11px;
+      }
     }
   </style>
 </head>
@@ -704,6 +922,7 @@
 
       <div class="nav-links" id="nav-links">
         <a href="#hakkimda">Hakkımda</a>
+        <a href="#terminal">Konsol</a>
         <a href="#projeler">Projeler</a>
         <a href="#beceriler">Beceriler</a>
         <a href="https://github.com/eekilinc" target="_blank" rel="noopener">GitHub</a>
@@ -762,6 +981,56 @@
           <h3>Açık Kaynak & Vizyon</h3>
           <p>Görüntü işlemeden (OCR, OMR) Bluetooth / IoT haberleşmesine kadar gerçek hayat problemlerini çözen, temiz
             mimari prensiplerine uygun açık kaynak çözümler üretiyorum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="terminal">
+    <div class="container">
+      <h2 class="sec-title">Geliştirici <span class="grad-text">Konsolu</span></h2>
+      <p class="sec-sub">Sistem durumunu inceleyin, komutlar çalıştırın veya gizli özellikleri keşfedin</p>
+
+      <!-- Hızlı Komut Butonları (Chips) -->
+      <div class="term-chips" id="term-chips">
+        <span class="term-chip-label">Hızlı Komutlar:</span>
+        <button class="term-chip" data-cmd="neofetch">neofetch</button>
+        <button class="term-chip" data-cmd="matrix">matrix</button>
+        <button class="term-chip" data-cmd="projeler">projeler</button>
+        <button class="term-chip" data-cmd="beceriler">beceriler</button>
+        <button class="term-chip" data-cmd="quote">quote</button>
+        <button class="term-chip" data-cmd="cat gizli.txt">cat gizli.txt</button>
+        <button class="term-chip" data-cmd="yardim">yardım</button>
+        <button class="term-chip" data-cmd="clear">clear</button>
+      </div>
+
+      <!-- Terminal Penceresi -->
+      <div class="terminal-window reveal">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="dot-btn dot-red" title="Kapat" id="term-dot-close"></span>
+            <span class="dot-btn dot-yellow" title="Küçült / Temizle" id="term-dot-min"></span>
+            <span class="dot-btn dot-green" title="Büyüt / Odaklan" id="term-dot-max"></span>
+          </div>
+          <div class="terminal-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            <span>eekilinc@developer-terminal:~ (zsh)</span>
+          </div>
+          <div class="terminal-actions">
+            <button class="term-action-btn" id="term-clear-btn" title="Ekranı Temizle">Temizle</button>
+          </div>
+        </div>
+
+        <div class="terminal-body" id="terminal-body">
+          <canvas id="matrix-canvas" class="matrix-canvas" style="display:none;"></canvas>
+          <div id="matrix-overlay" class="matrix-overlay" style="display:none;" title="Çıkmak için tıklayın">
+            <span>[MATRIX MODU AKTİF — Çıkmak için tıkla veya ESC'ye bas]</span>
+          </div>
+          <div class="terminal-output" id="terminal-output"></div>
+          <div class="terminal-prompt-row">
+            <span class="term-user">eekilinc</span><span class="term-at">@</span><span class="term-host">portfolio</span><span class="term-path">:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="Komut yazın (örn: help)..." aria-label="Terminal Komut Girişi">
+          </div>
         </div>
       </div>
     </div>
@@ -1206,10 +1475,368 @@
       filterAndRenderRepos();
     }
 
+    // ==========================================
+    // İnteraktif Geliştirici Konsolu (Terminal)
+    // ==========================================
+    function initTerminal() {
+      const termBody = document.getElementById("terminal-body");
+      const termOutput = document.getElementById("terminal-output");
+      const termInput = document.getElementById("terminal-input");
+      const clearBtn = document.getElementById("term-clear-btn");
+      const chips = document.querySelectorAll(".term-chip");
+      const canvas = document.getElementById("matrix-canvas");
+      const matrixOverlay = document.getElementById("matrix-overlay");
+      if (!termBody || !termOutput || !termInput) return;
+
+      const history = [];
+      let historyIndex = -1;
+      let matrixRunning = false;
+      let matrixAnimId = null;
+
+      // HTML kaçış fonksiyonu
+      function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, m => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[m]));
+      }
+
+      // Terminale çıktı satırı ekleme
+      function appendOutput(html) {
+        const div = document.createElement("div");
+        div.className = "terminal-line";
+        div.innerHTML = html;
+        termOutput.appendChild(div);
+        termBody.scrollTop = termBody.scrollHeight;
+      }
+
+      // Rastgele yazılımcı alıntıları
+      const QUOTES = [
+        `"Talk is cheap. Show me the code."\n— Linus Torvalds`,
+        `"Simplicity is prerequisite for reliability."\n— Edsger W. Dijkstra`,
+        `"First, solve the problem. Then, write the code."\n— John Johnson`,
+        `"Make it work, make it right, make it fast."\n— Kent Beck`,
+        `"The best way to predict the future is to invent it."\n— Alan Kay`,
+        `"Yazılım sadece bir makineye komut vermek değil; karmaşık dünyayı basitleştirme sanatıdır."\n— Ekrem Eşref KILINÇ`
+      ];
+
+      // Komutları işleme motoru
+      function handleCommand(cmdRaw) {
+        const cmd = cmdRaw.trim();
+        if (!cmd) return;
+
+        // Geçmişe kaydet
+        history.push(cmd);
+        historyIndex = history.length;
+
+        // Komutu ekranda yazdır
+        appendOutput(`<div><span class="term-user">eekilinc</span><span class="term-at">@</span><span class="term-host">portfolio</span><span class="term-path">:~$</span> <span style="color:#f8fafc;font-weight:500;">${escapeHtml(cmd)}</span></div>`);
+
+        const parts = cmd.split(" ");
+        const primary = parts[0].toLowerCase();
+        const arg = parts.slice(1).join(" ").toLowerCase();
+
+        switch (primary) {
+          case "help":
+          case "yardim":
+          case "yardım":
+          case "?":
+            appendOutput(`
+<div style="color:#94a3b8;margin-bottom:6px;">Kullanılabilir Komutlar:</div>
+<div style="display:grid;grid-template-columns:auto 1fr;gap:4px 16px;color:#cbd5e1;">
+  <div><b style="color:#38bdf8;">neofetch</b></div><div>Sistem ve geliştirici profil kartını gösterir</div>
+  <div><b style="color:#22c55e;">matrix</b></div><div>İkonik yeşil dijital kod yağmurunu başlatır</div>
+  <div><b style="color:#fbbf24;">projeler</b></div><div>Öne çıkan projelerin listesi ve bağlantıları</div>
+  <div><b style="color:#c084fc;">beceriler</b></div><div>Yazılım yetkinlikleri ve teknoloji seti</div>
+  <div><b style="color:#f472b6;">quote</b></div><div>İlham verici yazılımcı aforizması yazdırır</div>
+  <div><b style="color:#e2e8f0;">cat gizli.txt</b></div><div>Gizli geliştirici notunu / easter egg'i açar</div>
+  <div><b style="color:#38bdf8;">whoami</b></div><div>Geçerli kullanıcı kimliğini gösterir</div>
+  <div><b style="color:#34d399;">contact</b></div><div>İletişim ve sosyal bağlantılar</div>
+  <div><b style="color:#94a3b8;">date</b></div><div>Geçerli sistem tarih ve saati</div>
+  <div><b style="color:#f87171;">clear</b></div><div>Konsol ekranını temizler</div>
+</div>
+<div style="color:#64748b;margin-top:8px;font-size:12px;">İpucu: Komut yazmak yerine üstteki renkli hap butonlarına da tıklayabilirsiniz!</div>
+            `);
+            break;
+
+          case "neofetch":
+          case "about":
+          case "sistem":
+            appendOutput(`
+<div style="font-family:inherit;line-height:1.45;">
+<span style="color:#38bdf8;font-weight:bold;">       /\\         </span><span style="color:#c084fc;font-weight:bold;">eekilinc</span><span style="color:#94a3b8;">@</span><span style="color:#38bdf8;font-weight:bold;">portfolio</span>
+<span style="color:#38bdf8;font-weight:bold;">      /  \\        </span><span style="color:#64748b;">-------------------------</span>
+<span style="color:#38bdf8;font-weight:bold;">     / /\\ \\       </span><span style="color:#fbbf24;font-weight:600;">OS:</span> Arch Linux / Web v2.4 (x86_64)
+<span style="color:#38bdf8;font-weight:bold;">    / /__\\ \\      </span><span style="color:#fbbf24;font-weight:600;">Host:</span> eekilinc.github.io (GitHub Pages)
+<span style="color:#38bdf8;font-weight:bold;">   / /____\\ \\     </span><span style="color:#fbbf24;font-weight:600;">Geliştirici:</span> Ekrem Eşref KILINÇ
+<span style="color:#38bdf8;font-weight:bold;">  /_/      \\_\\    </span><span style="color:#fbbf24;font-weight:600;">Eğitim:</span> Burdur Mehmet Akif Ersoy Üniv.
+                  <span style="color:#fbbf24;font-weight:600;">Odağı:</span> Flutter · C# / WPF · Tauri (Rust) · TS
+                  <span style="color:#fbbf24;font-weight:600;">Projeler:</span> 15+ Aktif Depo (Indirgitsin, VoltGet...)
+                  <span style="color:#fbbf24;font-weight:600;">Katkı:</span> 560+ Commit / Contribution
+                  <span style="color:#fbbf24;font-weight:600;">Durum:</span> 🟢 Açık Kaynak & Yeni Fikirlere Açık
+                  <span style="color:#fbbf24;font-weight:600;">Shell:</span> zsh 5.9 (ekrem-term v1.0)
+                  <span style="color:#fbbf24;font-weight:600;">Uptime:</span> Kod yazarak geçen yıllar ☕
+
+  <span style="color:#ef4444;">███</span> <span style="color:#f59e0b;">███</span> <span style="color:#10b981;">███</span> <span style="color:#06b6d4;">███</span> <span style="color:#6366f1;">███</span> <span style="color:#ec4899;">███</span> <span style="color:#f8fafc;">███</span>
+</div>
+            `);
+            break;
+
+          case "matrix":
+            startMatrix();
+            break;
+
+          case "projeler":
+          case "projects":
+          case "repos":
+            appendOutput(`
+<div style="color:#38bdf8;font-weight:600;margin-bottom:6px;">📦 Öne Çıkan Projeler (Toplam 15):</div>
+<div style="line-height:1.65;">
+  • <a href="https://github.com/eekilinc/Indirgitsin" target="_blank" rel="noopener" style="color:#4ade80;text-decoration:underline;">Indirgitsin</a> [Kotlin/Compose] - Android ses/video indirme yöneticisi.<br>
+  • <a href="https://github.com/eekilinc/VoltGet" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:underline;">VoltGet</a> [TypeScript/Electron] - 8-thread hızlı indirme & stream sniffer.<br>
+  • <a href="https://github.com/eekilinc/MyFinans" target="_blank" rel="noopener" style="color:#fbbf24;text-decoration:underline;">MyFinans</a> [React/Capacitor] - Kişisel finans ve bütçe yönetimi.<br>
+  • <a href="https://github.com/eekilinc/PdfStudio" target="_blank" rel="noopener" style="color:#c084fc;text-decoration:underline;">PdfStudio</a> [Tauri 2/Rust] - %100 çevrimdışı PDF paketi & OCR.<br>
+  • <a href="https://github.com/eekilinc/Ocr-Capture" target="_blank" rel="noopener" style="color:#f472b6;text-decoration:underline;">Ocr-Capture</a> [Rust/Tauri] - Hızlı ekran alıntısı ve OCR aracı.<br>
+  • <a href="https://github.com/eekilinc/KozaRcCar" target="_blank" rel="noopener" style="color:#60a5fa;text-decoration:underline;">KozaRcCar</a> [Flutter/Bluetooth] - Telemetrili RC araba kontrolü.<br>
+  • <a href="https://github.com/eekilinc/EzanApp" target="_blank" rel="noopener" style="color:#34d399;text-decoration:underline;">EzanApp</a> [Flutter/Dart] - Namaz vakitleri & ezan bildirimleri.<br>
+  <span style="color:#94a3b8;font-size:12px;">(Tüm 15 projeyi incelemek ve filtrelemek için aşağıdaki Projeler bölümüne göz atabilirsiniz.)</span>
+</div>
+            `);
+            break;
+
+          case "beceriler":
+          case "skills":
+            appendOutput(`
+<div style="color:#c084fc;font-weight:600;margin-bottom:6px;">⚡ Teknoloji ve Yetkinlik Seti:</div>
+<div style="line-height:1.7;">
+  <span style="color:#38bdf8;font-weight:600;">📱 Mobil:</span> Flutter, Dart, Jetpack Compose, Kotlin, Android SDK<br>
+  <span style="color:#4ade80;font-weight:600;">💻 Masaüstü & Sistem:</span> C#, .NET, WPF, Tauri v2 (Rust), Electron<br>
+  <span style="color:#fbbf24;font-weight:600;">🌐 Web & Backend:</span> React, TypeScript, JavaScript, PHP, Laravel, Node.js, Tailwind CSS<br>
+  <span style="color:#ec4899;font-weight:600;">🛠️ Donanım & Araçlar:</span> Bluetooth Classic / BLE, Arduino, Git, GitHub Actions, Docker
+</div>
+            `);
+            break;
+
+          case "quote":
+          case "soz":
+          case "söz":
+            const q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+            appendOutput(`<div style="color:#a7f3d0;font-style:italic;padding:8px 12px;border-left:3px solid #10b981;background:rgba(16,185,129,0.06);border-radius:0 6px 6px 0;">${escapeHtml(q).replace(/\n/g, '<br>')}</div>`);
+            break;
+
+          case "cat":
+            if (arg === "gizli.txt" || arg === "secret.txt" || arg === "flag.txt") {
+              appendOutput(`
+<div style="padding:10px 14px;background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.3);border-radius:8px;color:#e9d5ff;">
+  <div style="color:#facc15;font-weight:bold;margin-bottom:4px;">🎉 [TEBRİKLER! GİZLİ DOSYAYI BULDUNUZ]</div>
+  <div style="font-style:italic;color:#f8fafc;margin:6px 0;">
+    "Kod sadece çalışmakla kalmamalı; bir sanat eseri gibi akıcı, zarif ve insan hayatına değer katan bir dokunuş olmalıdır."
+  </div>
+  <div style="text-align:right;color:#a855f7;font-weight:600;">— Ekrem Eşref KILINÇ</div>
+  <div style="font-size:11.5px;color:#94a3b8;margin-top:6px;">Konsolu kurcalayıp bu gizli köşeyi keşfettiğiniz için teşekkürler! ⭐</div>
+</div>
+              `);
+            } else if (!arg) {
+              appendOutput(`<div style="color:#f87171;">cat: dosya adı belirtilmedi. Örnek: 'cat gizli.txt'</div>`);
+            } else {
+              appendOutput(`<div style="color:#f87171;">cat: ${escapeHtml(arg)}: Böyle bir dosya bulunamadı. (Deneyin: 'cat gizli.txt')</div>`);
+            }
+            break;
+
+          case "sudo":
+            appendOutput(`<div style="color:#f87171;padding:6px 10px;background:rgba(239,68,68,0.1);border-radius:6px;">🔒 Erişim Reddedildi: Root yetkisine erişmek için önce geliştiriciye çay veya kahve ikramı gereklidir ☕</div>`);
+            break;
+
+          case "clear":
+          case "cls":
+            termOutput.innerHTML = "";
+            break;
+
+          case "whoami":
+            appendOutput(`<div style="color:#38bdf8;">misafir-gelistirici (Portfolyo Ziyaretçisi 🚀)</div>`);
+            break;
+
+          case "contact":
+          case "iletisim":
+          case "iletişim":
+            appendOutput(`
+<div style="color:#e2e8f0;line-height:1.6;">
+  📬 E-posta: <a href="mailto:ekilinc@mehmetakif.edu.tr" style="color:#38bdf8;text-decoration:underline;">ekilinc@mehmetakif.edu.tr</a><br>
+  🐙 GitHub: <a href="https://github.com/eekilinc" target="_blank" rel="noopener" style="color:#4ade80;text-decoration:underline;">github.com/eekilinc</a>
+</div>
+            `);
+            break;
+
+          case "date":
+            appendOutput(`<div style="color:#94a3b8;">${new Date().toLocaleString("tr-TR", { dateStyle: "full", timeStyle: "medium" })}</div>`);
+            break;
+
+          default:
+            appendOutput(`<div style="color:#f87171;">zsh: komut bulunamadı: <span style="color:#fca5a5;">${escapeHtml(cmd)}</span>. Kullanılabilir komutlar için 'help' yazabilirsiniz.</div>`);
+            break;
+        }
+
+        termBody.scrollTop = termBody.scrollHeight;
+      }
+
+      // Matrix Kod Yağmuru Animasyonu
+      function startMatrix() {
+        if (!canvas || matrixRunning) return;
+        matrixRunning = true;
+        canvas.style.display = "block";
+        if (matrixOverlay) matrixOverlay.style.display = "block";
+
+        const ctx = canvas.getContext("2d");
+        const rect = termBody.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+
+        const chars = "01010101EKREMKILINCFLUTTERDARTRUSTC#TAURINEOTOPSECRET</>{}[]=+#*~";
+        const fontSize = 14;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array(columns).fill(1);
+
+        function draw() {
+          if (!matrixRunning) return;
+          ctx.fillStyle = "rgba(0, 0, 0, 0.06)";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          ctx.fillStyle = "#22c55e";
+          ctx.font = `${fontSize}px monospace`;
+
+          for (let i = 0; i < drops.length; i++) {
+            const text = chars[Math.floor(Math.random() * chars.length)];
+            const x = i * fontSize;
+            const y = drops[i] * fontSize;
+
+            if (Math.random() > 0.85) {
+              ctx.fillStyle = "#ffffff";
+            } else {
+              ctx.fillStyle = "#22c55e";
+            }
+            ctx.fillText(text, x, y);
+
+            if (y > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+            drops[i]++;
+          }
+          matrixAnimId = requestAnimationFrame(draw);
+        }
+        draw();
+      }
+
+      function stopMatrix() {
+        if (!matrixRunning) return;
+        matrixRunning = false;
+        if (matrixAnimId) cancelAnimationFrame(matrixAnimId);
+        if (canvas) canvas.style.display = "none";
+        if (matrixOverlay) matrixOverlay.style.display = "none";
+        appendOutput(`<div style="color:#22c55e;font-size:12px;">[Matrix modundan çıkıldı]</div>`);
+        termInput.focus();
+      }
+
+      if (matrixOverlay) matrixOverlay.addEventListener("click", stopMatrix);
+      if (canvas) canvas.addEventListener("click", stopMatrix);
+
+      // Tuş Takibi (Enter & Ok Tuşları)
+      termInput.addEventListener("keydown", e => {
+        if (matrixRunning) {
+          if (e.key === "Escape" || e.key === "q" || e.key === "Enter") {
+            stopMatrix();
+          }
+          return;
+        }
+
+        if (e.key === "Enter") {
+          const val = termInput.value;
+          termInput.value = "";
+          handleCommand(val);
+        } else if (e.key === "ArrowUp") {
+          if (history.length > 0 && historyIndex > 0) {
+            historyIndex--;
+            termInput.value = history[historyIndex];
+          }
+          e.preventDefault();
+        } else if (e.key === "ArrowDown") {
+          if (history.length > 0 && historyIndex < history.length - 1) {
+            historyIndex++;
+            termInput.value = history[historyIndex];
+          } else {
+            historyIndex = history.length;
+            termInput.value = "";
+          }
+          e.preventDefault();
+        } else if (e.key === "Escape") {
+          termInput.value = "";
+        }
+      });
+
+      // Terminal gövdesine tıklandığında input'a odaklan
+      termBody.addEventListener("click", e => {
+        if (!matrixRunning && e.target !== matrixOverlay) {
+          termInput.focus();
+        }
+      });
+
+      // Hızlı komut butonları (Chips)
+      chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          const cmd = chip.dataset.cmd;
+          if (cmd) {
+            if (matrixRunning) stopMatrix();
+            termInput.value = "";
+            handleCommand(cmd);
+          }
+        });
+      });
+
+      // Ekranı temizle butonu
+      if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+          if (matrixRunning) stopMatrix();
+          termOutput.innerHTML = "";
+          termInput.focus();
+        });
+      }
+
+      // Pencere kontrol butonları
+      const dotClose = document.getElementById("term-dot-close");
+      const dotMin = document.getElementById("term-dot-min");
+      const dotMax = document.getElementById("term-dot-max");
+      if (dotClose) {
+        dotClose.addEventListener("click", () => {
+          termOutput.innerHTML = `<div style="color:#94a3b8;font-size:12px;">Terminal oturumu kapatıldı. Yeniden açmak için sayfayı yenileyin veya bir komut butonuna tıklayın.</div>`;
+        });
+      }
+      if (dotMin) {
+        dotMin.addEventListener("click", () => {
+          termOutput.innerHTML = "";
+          appendOutput(`<div style="color:#94a3b8;font-size:12px;">Terminal küçültüldü / temizlendi.</div>`);
+        });
+      }
+      if (dotMax) {
+        dotMax.addEventListener("click", () => {
+          termBody.classList.toggle("term-expanded");
+          termInput.focus();
+        });
+      }
+
+      // ESC tuşuyla matrix durdurma
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape" && matrixRunning) {
+          stopMatrix();
+        }
+      });
+
+      // İlk açılışta Neofetch sistem özetini yazdır
+      handleCommand("neofetch");
+    }
+
     // Event Listeners Kurulumu
     document.addEventListener("DOMContentLoaded", () => {
-      // Verileri çek
+      // Verileri çek ve bileşenleri başlat
       fetchPortfolioData();
+      initTerminal();
       observeReveals();
 
       // Mobil Menü Aç/Kapa
