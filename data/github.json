@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T15:47:23.546Z",
+  "updated_at": "2026-09-11T20:22:56.528Z",
   "user": {
     "login": "eekilinc",
     "name": "Ekrem Eşref KILINÇ",
@@ -7,8 +7,8 @@
     "html_url": "https://github.com/eekilinc",
     "public_repos": 19,
     "followers": 36,
-    "total_stars": 0,
-    "total_commits": "489+"
+    "total_stars": 1,
+    "total_commits": "491+"
   },
   "repos": [
     {
@@ -122,7 +122,7 @@
       "html_url": "https://github.com/eekilinc/EzanApp",
       "description": "🕌 Islamic prayer times & customizable reminder app built with Flutter",
       "language": "Dart",
-      "stargazers_count": 0,
+      "stargazers_count": 1,
       "forks_count": 0,
       "pushed_at": "2026-09-02T00:45:52Z",
       "topics": [
@@ -246,13 +246,30 @@
     {
       "name": "Postaci",
       "html_url": "https://github.com/eekilinc/Postaci",
-      "description": "📬 Modern API test ve HTTP istek yönetim aracı (geliştirici odaklı Postman alternatifi).",
+      "description": "⚡ Yıldırım hızında, güvenli ve modern masaüstü e-posta istemcisi (Fast, secure and modern desktop email client).",
       "language": "TypeScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-09-11T15:08:29Z",
-      "topics": [],
-      "homepage": ""
+      "pushed_at": "2026-09-11T18:43:11Z",
+      "topics": [
+        "dark-mode",
+        "desktop-app",
+        "electron",
+        "email-client",
+        "imap",
+        "mailbird",
+        "oauth2",
+        "open-source",
+        "postaci",
+        "productivity",
+        "react",
+        "smtp",
+        "sqlite",
+        "typescript",
+        "vite",
+        "windows"
+      ],
+      "homepage": "https://github.com/eekilinc/Postaci"
     },
     {
       "name": "KozaBluetooh",
