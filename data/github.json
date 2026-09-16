@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T16:01:42.757Z",
+  "updated_at": "2026-09-16T20:49:07.104Z",
   "user": {
     "login": "eekilinc",
     "name": "Ekrem Eşref KILINÇ",
@@ -124,7 +124,7 @@
       "language": "Dart",
       "stargazers_count": 1,
       "forks_count": 0,
-      "pushed_at": "2026-09-02T00:45:52Z",
+      "pushed_at": "2026-09-16T19:34:53Z",
       "topics": [
         "aladhan-api",
         "android",
