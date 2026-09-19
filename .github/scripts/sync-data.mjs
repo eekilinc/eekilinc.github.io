@@ -300,7 +300,7 @@ async function main() {
   }
 
   // Commit sayısı hesaplama
-  let formattedCommits = prevData?.user?.total_commits || "491+";
+  let formattedCommits = prevData?.user?.total_commits || "585+";
   if (gqlData?.totalCommits && gqlData.totalCommits > 0) {
     const c = gqlData.totalCommits;
     formattedCommits = `${c}+`;
