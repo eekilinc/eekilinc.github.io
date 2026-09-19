@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eekilinc.github.io/sitemap.xml
