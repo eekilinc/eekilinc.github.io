@@ -22,8 +22,8 @@ const PRIORITY_REPOS = [
   'Ocr-Capture',
   'EzanApp',
   'KozaRcCar',
-  'algoflow',
-  'optikdegerlendirme',
+  'AlgoFlow',
+  'OptikDegerlendirme',
   'kozaders',
   'learnnSql',
   'blutoothwithclassicsandble',
@@ -34,19 +34,19 @@ const PRIORITY_REPOS = [
 
 const CUSTOM_DESCRIPTIONS = {
   'indirgitsin': 'Kotlin ve Jetpack Compose ile Android video/ses indirme yöneticisi. Paralel aktarım, sesli video birleştirme ve kalıcı kuyruk.',
-  'myfinans': '💰 React + Capacitor mobil/web arayüzü ve Node.js backend ile kişisel finans takibi. Bütçe, kredi kartı ve taksit yönetimi.',
-  'voltget': '⚡ Ultra hızlı çok kanallı (8-thread) indirme yöneticisi ve akıllı medya yakalayıcı. Electron, React ve yt-dlp destekli IDM alternatifi.',
-  'pdfstudio': '🚀 %100 çevrimdışı PDF düzenleme paketi — Tauri 2 (Rust) + React 19, OCR ve Word/Excel dışa aktarma araçları.',
-  'ocr-capture': '⚡ Ekranınızdan ışık hızında, çevrimdışı ve akıllı metin ayıklama aracı. Tauri v2, Rust ve Tesseract OCR ile masaüstü ekran alıntısı çözümü.',
-  'ezanapp': '🕌 Islamic prayer times & customizable reminder app built with Flutter (namaz vakitleri ve ezan bildirimleri).',
-  'kozarccar': '🏎️ HC-05/06 ve BLE destekli, telemetri, seri monitör ve kokpit arayüzlü gelişmiş Flutter RC model araç ve robot kontrol uygulaması.',
-  'algoflow': '⚡ Sürükle-bırak algoritma & akış şeması stüdyosu: canlı yorumlayıcı + 6 farklı dile kod üretimi.',
-  'optikdegerlendirme': '📋 Optik form okuma ve sınav değerlendirme için WPF masaüstü uygulaması (OMR).',
-  'kozaders': '🎓 Laravel + Tailwind CSS ve Blade mimarisi ile geliştirilen Koza Ders eğitim ve öğrenim platformu.',
+  'myfinans': '💰 React + Capacitor mobil/web arayüzü ve Node.js backend ile kişisel finans takibi',
+  'voltget': '⚡ Ultra-fast download manager & smart media sniffer. 8-thread multi-part acceleration, stream grabber (yt-dlp + FFmpeg), and modern IDM alternative.',
+  'pdfstudio': '🚀 %100 çevrimdışı PDF düzenleme paketi — Tauri 2 (Rust) + React 19, OCR, Word/Excel dışa aktarma',
+  'ocr-capture': '⚡ Ekranınızdan ışık hızında, çevrimdışı ve akıllı metin ayıklama aracı. Tauri v2, Rust ve Tesseract OCR ile güçlendirilmiş, masaüstü ekran alıntısı ve OCR çözümü.',
+  'ezanapp': '🕌 Islamic prayer times & customizable reminder app built with Flutter',
+  'kozarccar': '🏎️ HC-05/06 ve BLE destekli, telemetri, seri monitör ve kokpit arayüzlü gelişmiş Flutter RC araba ve robot kontrol uygulaması.',
+  'algoflow': '⚡ Sürükle-bırak algoritma & akış şeması stüdyosu: canlı yorumlayıcı + 6 dile kod üretimi',
+  'optikdegerlendirme': '📋 Optik form okuma ve sınav değerlendirme için WPF masaüstü uygulaması (OMR)',
+  'kozaders': '🎓 Laravel + Tailwind CSS ile geliştirilen Koza Ders eğitim platformu',
   'learnnsql': '📊 İnteraktif SQL öğrenme, veritabanı sorgulama ve pratik yapma platformu.',
   'blutoothwithclassicsandble': '📡 Flutter ile Bluetooth Classic ve BLE (Düşük Enerji) haberleşme kütüphanesi & örnekleri.',
-  'calculatorwithelectron': '🧮 Electron ve JavaScript altyapısıyla geliştirilmiş modern masaüstü hesap makinesi uygulaması.',
-  'postaci': '📬 Modern API test ve HTTP istek yönetim aracı (geliştirici odaklı Postman alternatifi).',
+  'calculatorwithelectron': 'Electron ile Hesap Makinesi Uygulaması',
+  'postaci': '⚡ Yıldırım hızında, güvenli ve modern masaüstü e-posta istemcisi (Fast, secure and modern desktop email client).',
   'kozabluetooh': '📶 C# ve .NET ile Bluetooth cihaz haberleşme, bağlantı yönetimi ve veri aktarım arayüzü.'
 };
 
@@ -300,7 +300,7 @@ async function main() {
   }
 
   // Commit sayısı hesaplama
-  let formattedCommits = prevData?.user?.total_commits || "560+";
+  let formattedCommits = prevData?.user?.total_commits || "491+";
   if (gqlData?.totalCommits && gqlData.totalCommits > 0) {
     const c = gqlData.totalCommits;
     formattedCommits = `${c}+`;
